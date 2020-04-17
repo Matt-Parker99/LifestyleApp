@@ -42,15 +42,11 @@ public class Login extends AppCompatActivity {
     // Firebase variable
     private FirebaseAuth mAuth;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mAuth = Firebase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
     }
 
     public void Login(android.view.View view) {
@@ -60,7 +56,6 @@ public class Login extends AppCompatActivity {
 
         pass = findViewById(R.id.password);
         password = pass.getText().toString();
-
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -78,8 +73,6 @@ public class Login extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-
-                        // ...
                     }
                 });
     }
@@ -91,42 +84,12 @@ public class Login extends AppCompatActivity {
 
     public void updateUI(com.google.firebase.auth.FirebaseUser user){
         if(user==null){
-            Intent myIntent = new Intent(getaseContext(), SignUp.class);
+            Intent myIntent = new Intent(getBaseContext(), SignUp.class);
             startActivity(myIntent);
         } else {
-            Intent myIntent = new Intent(getBaseContext(), homeActivity.class);
+            Intent myIntent = new Intent(getBaseContext(), Home.class);
             startActivity(myIntent);
         }
     }
 
-    // **CODE FROM PREVIOUS APPLICATION WHICH COULD BE USED***
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //editText = (EditText) findViewById(R.id.editText);
-        login = findViewById(R.id.login);
-        signUp = findViewById(R.id.signUp);
-    } */
-
-    //@Override
-    //public void onOpen(Room room) {
-    //System.out.println("Connected to room");
-    //}
-
-    //@Override
-    //public void onOpenFailure(Room room, Exception ex) {
-    //System.err.println(ex);
-    //}
-
-    //@Override
-    //public void onMessage(Room room, com.scaledrone.lib.Message receivedMessage) {
-    //TODO
-    //}
-
-}
-
-
-
-    }
 }
