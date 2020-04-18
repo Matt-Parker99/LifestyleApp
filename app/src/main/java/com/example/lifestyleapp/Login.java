@@ -3,14 +3,11 @@ package com.example.lifestyleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.animation.ObjectAnimator;
-import android.os.Handler;
-import android.widget.ProgressBar;
+
 import android.util.Log;
 import android.widget.Toast;
 
@@ -49,7 +46,7 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void Login(android.view.View view) {
+    public void login(android.view.View view) {
         // Validating signing in
         mail = findViewById(R.id.email);
         email = mail.getText().toString();

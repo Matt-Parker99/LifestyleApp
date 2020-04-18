@@ -42,7 +42,7 @@ public class SignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void register(android.view.View view) {
+    public void signUp(android.view.View view) {
 
         mail = findViewById(R.id.email);
         email = mail.getText().toString();
@@ -51,32 +51,37 @@ public class SignUp extends AppCompatActivity {
 
         cpass = findViewById(R.id.conPassword);
         conPassword = cpass.getText().toString();
-        System.out.println(conPassword);
-        System.out.println(password);
+        //System.out.println(conPassword);
+        //System.out.println(password);
         name = findViewById(R.id.name);
         fullname = name.getText().toString();
 
         // If statement to check if the passwords match up
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            //This commented line was used for last project
-                            //addUser(user.getUid(), fullname);
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+        if (password.equals(conPassword)) {
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.e(TAG, "Here");
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                //This commented line was used for last project
+                                //addUser(user.getUid(), fullname);
+                                updateUI(user);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                            }
                         }
-                    }
-                });
+                    });
+        } else {
+            //Will need to output to screen that passwords were not the same
+        }
     }
 
     public void back(android.view.View view) {
@@ -84,6 +89,7 @@ public class SignUp extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    //Will prob be used to store usernames etc.
     public void addUser(String uid, String name){
         // Write message to database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
