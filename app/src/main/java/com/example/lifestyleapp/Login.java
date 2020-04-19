@@ -54,34 +54,30 @@ public class Login extends AppCompatActivity {
         pass = findViewById(R.id.password);
         password = pass.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-                    }
-                });
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "signInWithEmail:success");
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    updateUI(user);
+                } else {
+                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                    Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+                    updateUI(null);
+                }
+            }
+        });
     }
 
     public  void signUp(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(), SignUp.class);
+        Intent myIntent = new Intent(getBaseContext(), com.example.lifestyleapp.signUp.class);
         startActivity(myIntent);
     }
 
     public void updateUI(com.google.firebase.auth.FirebaseUser user){
         if(user==null){
-            Intent myIntent = new Intent(getBaseContext(), SignUp.class);
+            Intent myIntent = new Intent(getBaseContext(), Login.class);
             startActivity(myIntent);
         } else {
             Intent myIntent = new Intent(getBaseContext(), Home.class);

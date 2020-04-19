@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUp extends AppCompatActivity {
+public class signUp extends AppCompatActivity {
     private static final String TAG = "your-tag-name";
     private EditText mail;
     private EditText pass;
@@ -46,39 +46,40 @@ public class SignUp extends AppCompatActivity {
 
         mail = findViewById(R.id.email);
         email = mail.getText().toString();
+
         pass = findViewById(R.id.password);
         password = pass.getText().toString();
 
         cpass = findViewById(R.id.conPassword);
         conPassword = cpass.getText().toString();
-        //System.out.println(conPassword);
-        //System.out.println(password);
+
         name = findViewById(R.id.name);
         fullname = name.getText().toString();
 
+        Log.e("Name:", fullname);
+        Log.e("Email:", email);
+        Log.e("Password:", password);
+        Log.e("ConPassword:", conPassword);
         // If statement to check if the passwords match up
         if (password.equals(conPassword)) {
-            mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            Log.e(TAG, "Here");
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "createUserWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                //This commented line was used for last project
-                                //addUser(user.getUid(), fullname);
-                                updateUI(user);
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
-                                updateUI(null);
-                            }
-                        }
-                    });
+            Log.e("Pass", "1");
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    Log.e("Pass", "2");
+                    if (task.isSuccessful()) {
+                        Log.e("Pass", "3");
+                        Log.d(TAG, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
+                    } else {
+                        Log.e("Pass", "4");
+                        Log.w(TAG, "createWithEmail:failure", task.getException());
+                        Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
+                }
+            });
         } else {
             //Will need to output to screen that passwords were not the same
         }
@@ -99,8 +100,8 @@ public class SignUp extends AppCompatActivity {
 
     public void updateUI(com.google.firebase.auth.FirebaseUser user) {
         if (user == null) {
-            Intent myintent = new Intent(getBaseContext(), SignUp.class);
-            startActivity(myintent);
+            Intent myIntent = new Intent(getBaseContext(), signUp.class);
+            startActivity(myIntent);
         } else {
             Intent myIntent = new Intent(getBaseContext(), Home.class);
             startActivity(myIntent);

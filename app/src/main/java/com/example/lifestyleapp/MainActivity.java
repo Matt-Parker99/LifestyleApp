@@ -37,14 +37,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
-
-    public void login(android.view.View view) {
-        Intent myIntent = new Intent(getBaseContext(), Login.class);
-        startActivity(myIntent);
-    }
-
-    public void signUp(android.view.View view) {
-        Intent myIntent = new Intent(getBaseContext(), SignUp.class);
-        startActivity(myIntent);
-    }
 }
