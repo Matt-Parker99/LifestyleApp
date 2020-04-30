@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
             Intent myIntent = new Intent(getBaseContext(), Login.class);
             startActivity(myIntent);
         } else {
-            Intent myIntent = new Intent(getBaseContext(), Home.class);
+            Intent myIntent = new Intent(getBaseContext(), mainHub.class);
             startActivity(myIntent);
         }
     }

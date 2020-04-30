@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
             if (mUser != null) {
-                Intent myIntent = new Intent(MainActivity.this, Home.class);
+                Intent myIntent = new Intent(MainActivity.this, mainHub.class);
                 startActivity(myIntent);
                 finish();
             }
