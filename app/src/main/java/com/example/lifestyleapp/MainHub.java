@@ -1,14 +1,14 @@
 package com.example.lifestyleapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -95,33 +95,33 @@ public class MainHub extends AppCompatActivity {
 
 
 
-    public void cart(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),"class name".class);
-
+    public void shop(android.view.View view){
+        Intent myIntent = new Intent(getBaseContext(),Shop.class);
+        startActivity(myIntent);
     }
 
     public void message(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),.class);
+        Intent myIntent = new Intent(getBaseContext(),Message.class);
         startActivity(myIntent);
     }
 
     public void groupMessage(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),.class);
+        Intent myIntent = new Intent(getBaseContext(),GroupMessage.class);
         startActivity(myIntent);
     }
 
     public void priceCheck(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),.class);
+        Intent myIntent = new Intent(getBaseContext(),PriceCheck.class);
         startActivity(myIntent);
     }
 
     public void closestShop(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),.class);
+        Intent myIntent = new Intent(getBaseContext(),ClosestShop.class);
         startActivity(myIntent);
     }
 
     public void statistics(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),.class);
+        Intent myIntent = new Intent(getBaseContext(),Statistics.class);
         startActivity(myIntent);
     }
 
@@ -133,7 +133,7 @@ public class MainHub extends AppCompatActivity {
     }
 
     public void share(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),"share".class);
+        Intent myIntent = new Intent(getBaseContext(),Share.class);
         startActivity(myIntent);
     }
 }
