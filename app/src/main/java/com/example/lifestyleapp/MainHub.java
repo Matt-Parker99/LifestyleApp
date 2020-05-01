@@ -1,29 +1,16 @@
 package com.example.lifestyleapp;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import java.io.File;
 
 public class MainHub extends AppCompatActivity {
 
@@ -50,10 +37,16 @@ public class MainHub extends AppCompatActivity {
         email = findViewById(R.id.email);
         pic = findViewById(R.id.imageView);
 
-        if (user != null) {
+
+        // below code currently causes program to crash
+
+        /*if (user != null) {
             String email1 = user.getEmail();
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("users/" + user.getUid());
+
+
+
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -89,49 +82,49 @@ public class MainHub extends AppCompatActivity {
                 });
             } catch (Exception e) {
             }
-
-        }
+        }*/
     }
 
+    // Button functions
 
-
+    // shop button, starts to shop activity
     public void shop(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),Shop.class);
         startActivity(myIntent);
     }
-
+    // message button, starts to message activity
     public void message(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),Message.class);
         startActivity(myIntent);
     }
-
+    // group-message button, starts to group-message activity
     public void groupMessage(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),GroupMessage.class);
         startActivity(myIntent);
     }
-
+    // price check button, starts to price-check activity
     public void priceCheck(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),PriceCheck.class);
         startActivity(myIntent);
     }
-
+    // closestShop button, starts closest-shop activity
     public void closestShop(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),ClosestShop.class);
         startActivity(myIntent);
     }
-
+    // statistics button, starts statistics activity
     public void statistics(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),Statistics.class);
         startActivity(myIntent);
     }
-
+    // (Bottom row - back arrow) logout button, signs out from firebase instance and returns to MainActivity
     public void logout(android.view.View view){
         FirebaseAuth.getInstance().signOut();
         Intent myIntent = new Intent(getBaseContext(), MainActivity.class);
         startActivity(myIntent);
 
     }
-
+    // (Bottom row - share icon) starts share activity
     public void share(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),Share.class);
         startActivity(myIntent);
