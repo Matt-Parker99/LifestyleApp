@@ -12,6 +12,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
+        android:onClick="priceCheck"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
@@ -25,6 +26,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
+        android:onClick="shop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
@@ -38,6 +40,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
+        android:onClick="closestShop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
@@ -51,6 +54,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
+        android:onClick="message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
@@ -76,6 +80,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
+        android:onClick="groupMessage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
@@ -89,6 +94,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
+        android:onClick="statistics"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
@@ -128,6 +134,7 @@
         android:layout_height="71dp"
         android:layout_marginTop="660dp"
         android:background="#ffff"
+        android:onClick="share"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_share_black_24dp" />
@@ -136,8 +143,10 @@
         android:id="@+id/fullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="142dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="170dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
