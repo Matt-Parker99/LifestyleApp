@@ -5,10 +5,16 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -31,16 +37,32 @@ public class MainHub extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         mStorageRef = FirebaseStorage.getInstance().getReference();
-
-        // User data handlers
         fullName = findViewById(R.id.fullName);
+        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        if (user != null) {
+            //String userId = user.getUid();
+
+            DocumentReference docRef = db.collection("tests").document("testDoc1");
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    DocumentSnapshot document = task.getResult();
+                    fullName.setText(document.getData().toString());
+                }
+            });
+
+        }
+
+
+
+        // below block of code currently causes program to crash
+        /*
+
         email = findViewById(R.id.email);
         pic = findViewById(R.id.imageView);
 
-
-        // below code currently causes program to crash
-
-        /*if (user != null) {
+        if (user != null) {
             String email1 = user.getEmail();
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("users/" + user.getUid());
