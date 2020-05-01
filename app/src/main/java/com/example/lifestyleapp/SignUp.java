@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class signUp extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
     private static final String TAG = "your-tag-name";
     private EditText mail;
     private EditText pass;
@@ -100,10 +100,10 @@ public class signUp extends AppCompatActivity {
 
     public void updateUI(com.google.firebase.auth.FirebaseUser user) {
         if (user == null) {
-            Intent myIntent = new Intent(getBaseContext(), signUp.class);
+            Intent myIntent = new Intent(getBaseContext(), SignUp.class);
             startActivity(myIntent);
         } else {
-            Intent myIntent = new Intent(getBaseContext(), mainHub.class);
+            Intent myIntent = new Intent(getBaseContext(), MainHub.class);
             startActivity(myIntent);
         }
     }

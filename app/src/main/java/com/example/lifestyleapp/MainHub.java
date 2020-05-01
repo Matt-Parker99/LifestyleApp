@@ -25,7 +25,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 
-public class mainHub extends AppCompatActivity {
+public class MainHub extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private StorageReference mStorageRef;
@@ -39,9 +39,13 @@ public class mainHub extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_hub);
+
+        // Firebase handlers
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         mStorageRef = FirebaseStorage.getInstance().getReference();
+
+        // User data handlers
         fullName = findViewById(R.id.fullName);
         email = findViewById(R.id.email);
         pic = findViewById(R.id.imageView);
@@ -55,7 +59,7 @@ public class mainHub extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     DataSnapshot snapshot = dataSnapshot.child("Name");
                     String name = snapshot.getValue().toString();
-                    fullname.setText(name);
+                    fullName.setText(name);
                 }
 
                 @Override

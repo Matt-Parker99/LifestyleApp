@@ -14,13 +14,12 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class uploadPhoto extends AppCompatActivity {
+public class UploadPhoto extends AppCompatActivity {
     ImageView img;
     private StorageReference mStorageRef;
     private FirebaseAuth mAuth;
@@ -86,7 +85,7 @@ public class uploadPhoto extends AppCompatActivity {
     }
 
     public void updateUI(){
-        Intent myIntent = new Intent(getBaseContext(), mainHub.class);
+        Intent myIntent = new Intent(getBaseContext(), MainHub.class);
         startActivity(myIntent);
 
     }

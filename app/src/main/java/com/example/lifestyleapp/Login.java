@@ -1,21 +1,17 @@
 package com.example.lifestyleapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.annotation.NonNull;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-
-import android.util.Log;
 import android.widget.Toast;
 
-// Listener Imports
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
-// Firebase Imports
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -71,7 +67,7 @@ public class Login extends AppCompatActivity {
     }
 
     public  void signUp(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(), com.example.lifestyleapp.signUp.class);
+        Intent myIntent = new Intent(getBaseContext(), SignUp.class);
         startActivity(myIntent);
     }
 
@@ -80,7 +76,7 @@ public class Login extends AppCompatActivity {
             Intent myIntent = new Intent(getBaseContext(), Login.class);
             startActivity(myIntent);
         } else {
-            Intent myIntent = new Intent(getBaseContext(), mainHub.class);
+            Intent myIntent = new Intent(getBaseContext(), MainHub.class);
             startActivity(myIntent);
         }
     }
