@@ -103,22 +103,23 @@
         android:layout_height="71dp"
         android:background="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton17"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_home_black_24dp" />
 
     <ImageButton
-        android:id="@+id/imageButton16"
+        android:id="@+id/logout"
         android:layout_width="139dp"
         android:layout_height="71dp"
-        android:layout_marginTop="660dp"
         android:background="#ffff"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton15"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
     <ImageButton
@@ -128,8 +129,6 @@
         android:layout_marginTop="660dp"
         android:background="#ffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_share_black_24dp" />
 
