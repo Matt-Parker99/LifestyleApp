@@ -2,6 +2,7 @@ package com.example.lifestyleapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,12 +19,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainHub extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private StorageReference mStorageRef;
     private TextView email;
-    private TextView fullName;
+    private TextView welcomeMsg;
     private ImageView pic;
     private String url;
 
@@ -33,27 +37,48 @@ public class MainHub extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_hub);
 
-        // Firebase handlers
+        // TextView handler for welcome message:
+        welcomeMsg = findViewById(R.id.welcomeMsg);
+
+        // Firebase handlers:
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        fullName = findViewById(R.id.fullName);
+        // Firestore database handler:
         final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        // Check that a user is logged in:
         if (user != null) {
-            //String userId = user.getUid();
+            // Fetch the unique user ID
+            String userId = user.getUid();
+            // Create a reference to access the document corresponding to the userID in the users Collection:
+            final DocumentReference docRef = db.collection("users").document(userId);
 
-            DocumentReference docRef = db.collection("tests").document("testDoc1");
-            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    DocumentSnapshot document = task.getResult();
-                    fullName.setText(document.getData().toString());
-                }
-            });
-
+            try {
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        DocumentSnapshot document = task.getResult();
+                        if(document.exists()){
+                            welcomeMsg.setText("Welcome "+ document.get("name"));
+                        }else{
+                            //if no document exists for the user ID, create one with default values:
+                            Map<String, Object> defaultData = new HashMap<>();
+                            defaultData.put("name", "User");
+                            defaultData.put("profileImg","default.jpg");
+                            //TODO create a default profile image
+                            docRef.set(defaultData);
+                        }
+                    }
+                });
+            }
+            catch(Exception e){
+                Log.e(e.toString(), "Error accessing user document");
+                //TODO handle this error properly, (try again or log the user out?)
+            }
+        }else{
+            //TODO Handle the situation where we get to the MainHub but user is somehow Null
         }
-
 
 
         // below block of code currently causes program to crash

@@ -140,10 +140,10 @@
         app:srcCompat="@drawable/ic_share_black_24dp" />
 
     <TextView
-        android:id="@+id/fullName"
+        android:id="@+id/welcomeMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="120dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
