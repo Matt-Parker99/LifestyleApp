@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Share"></activity>
+        <activity android:name=".addShoppingList"></activity>
+        <activity android:name=".shoppingLists" />
+        <activity android:name=".Share" />
         <activity android:name=".Statistics" />
         <activity android:name=".ClosestShop" />
         <activity android:name=".PriceCheck" />
