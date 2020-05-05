@@ -38,7 +38,7 @@ public class UploadPhoto extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.profile);
     }
 
-    public void chooseFile(){
+    public void chooseFile(android.view.View view) {
         Intent photoPickIntent = new Intent();
         photoPickIntent.setType("image/*");
         photoPickIntent.setAction(Intent.ACTION_GET_CONTENT);
@@ -90,11 +90,6 @@ public class UploadPhoto extends AppCompatActivity {
         startActivity(myIntent);
 
     }
-
-
-
-
-
 
 }
 
