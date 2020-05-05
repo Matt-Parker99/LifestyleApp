@@ -182,5 +182,10 @@ public class MainHub extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(),Share.class);
         startActivity(myIntent);
     }
+
+    public void editProfile(android.view.View view){
+        Intent myIntent = new Intent(getBaseContext(),UploadPhoto.class);
+        startActivity(myIntent);
+    }
 }
 

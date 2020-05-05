@@ -1,14 +1,14 @@
 package com.example.lifestyleapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,6 +31,7 @@ public class UploadPhoto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_photo);
+
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -38,10 +39,10 @@ public class UploadPhoto extends AppCompatActivity {
     }
 
     public void chooseFile(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 1);
+        Intent photoPickIntent = new Intent();
+        photoPickIntent.setType("image/*");
+        photoPickIntent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(photoPickIntent, 1);
     }
 
     @Override
