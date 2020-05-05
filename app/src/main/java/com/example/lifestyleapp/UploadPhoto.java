@@ -4,27 +4,25 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 public class UploadPhoto extends AppCompatActivity {
     ImageView img;
     private StorageReference mStorageRef;
     private FirebaseAuth mAuth;
     public Uri imguri;
-    private String url;
+    private String userID;
     FirebaseUser user;
 
     @Override
@@ -38,13 +36,14 @@ public class UploadPhoto extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.profile);
     }
 
+    // Starts an external activity to choose a photo from the phone's storage
     public void chooseFile(android.view.View view) {
         Intent photoPickIntent = new Intent();
         photoPickIntent.setType("image/*");
         photoPickIntent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(photoPickIntent, 1);
     }
-
+    // Upon selecting a photo, checks the result and sets the data to the imageView
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -54,31 +53,23 @@ public class UploadPhoto extends AppCompatActivity {
         }
     }
 
-    public void uploadFile(android.view.View view){
-        //Uri file = Uri.fromFile(new File("path/to/images/rivers.jpg"));
-        //StorageReference riversRef = mStorageRef.child("images/rivers.jpg");
-        url = user.getUid();
-        System.out.println(url);
-        StorageReference Ref = mStorageRef.child(url+"."+getExtension(imguri));
-
-        Ref.putFile(imguri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // Get a URL to the uploaded content
-                        //Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                        // ...
-                    }
-                });
-        updateUI();
+    public void uploadFile(android.view.View view) {
+        // Retrieve user's unique ID
+        userID = user.getUid();
+        if (!(imguri == null)) {
+            try {
+                // Create a reference in storage to a new file "(userID).(file extension)
+                StorageReference ref = mStorageRef.child("userImages/" + userID + "." + getExtension(imguri));
+                ref.putFile(imguri);
+                Toast.makeText(getApplicationContext(), "Upload Successful!", Toast.LENGTH_SHORT).show();
+            } catch(Exception e) {
+                Log.e("UploadPhoto","Error uploading photo");
+                Toast.makeText(getApplicationContext(), "Error uploading photo", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "No Image selected", Toast.LENGTH_SHORT).show();
+        }
     }
-
     private String getExtension(Uri uri) {
         ContentResolver cr = getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
