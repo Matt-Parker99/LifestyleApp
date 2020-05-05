@@ -1,10 +1,8 @@
 package com.example.lifestyleapp;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,7 +17,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class shoppingLists extends AppCompatActivity {
+public class ShoppingLists extends AppCompatActivity {
 
     static ArrayList<String> notes = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
@@ -39,7 +37,7 @@ public class shoppingLists extends AppCompatActivity {
 
         if(item.getItemId() == R.id.add_note) {
 
-            Intent intent = new Intent(getApplicationContext(), addShoppingList.class);
+            Intent intent = new Intent(getApplicationContext(), AddShoppingList.class);
             startActivity(intent);
 
             return true;
@@ -73,7 +71,7 @@ public class shoppingLists extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(), addShoppingList.class);
+                Intent intent = new Intent(getApplicationContext(), AddShoppingList.class);
                 intent.putExtra("noteId", i);
                 startActivity(intent);
             }
@@ -83,7 +81,7 @@ public class shoppingLists extends AppCompatActivity {
 //        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 //            @Override
 //            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//                new AlertDialog.Builder(shoppingLists.this)
+//                new AlertDialog.Builder(ShoppingLists.this)
 //                        .setIcon(android.R.drawable.ic_dialog_alert)
 //                        .setTitle("Are you sure?")
 //                        .setMessage("Do you want to delete this list")

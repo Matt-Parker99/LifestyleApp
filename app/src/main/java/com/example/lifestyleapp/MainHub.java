@@ -142,7 +142,7 @@ public class MainHub extends AppCompatActivity {
 
     // shop button, starts to shop activity
     public void shop(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),Shop.class);
+        Intent myIntent = new Intent(getBaseContext(), ShoppingLists.class);
         startActivity(myIntent);
     }
     // message button, starts to message activity

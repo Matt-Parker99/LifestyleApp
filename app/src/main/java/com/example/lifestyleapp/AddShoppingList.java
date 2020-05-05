@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import java.util.HashSet;
 
-public class addShoppingList extends AppCompatActivity {
+public class AddShoppingList extends AppCompatActivity {
 
     int noteId;
 
@@ -30,12 +30,12 @@ public class addShoppingList extends AppCompatActivity {
 
         if(noteId != -1){
 
-            editText.setText(shoppingLists.notes.get(noteId));
+            editText.setText(ShoppingLists.notes.get(noteId));
         } else {
 
-            shoppingLists.notes.add(""); // empty note
-            noteId = shoppingLists.notes.size() -1;
-            shoppingLists.arrayAdapter.notifyDataSetChanged();
+            ShoppingLists.notes.add(""); // empty note
+            noteId = ShoppingLists.notes.size() -1;
+            ShoppingLists.arrayAdapter.notifyDataSetChanged();
 
         }
 
@@ -49,14 +49,14 @@ public class addShoppingList extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                shoppingLists.notes.set(noteId, String.valueOf(charSequence));
+                ShoppingLists.notes.set(noteId, String.valueOf(charSequence));
                 //update
-                shoppingLists.arrayAdapter.notifyDataSetChanged(); // 15:12 mins
+                ShoppingLists.arrayAdapter.notifyDataSetChanged(); // 15:12 mins
 
                 //saving
                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.lifestyleapp", Context.MODE_PRIVATE);
 
-                HashSet<String> set = new HashSet(shoppingLists.notes);
+                HashSet<String> set = new HashSet(ShoppingLists.notes);
 
                 sharedPreferences.edit().putStringSet("notes", set).apply();
             }

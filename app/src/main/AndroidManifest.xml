@@ -9,15 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addShoppingList"></activity>
-        <activity android:name=".shoppingLists" />
+        <activity android:name=".AddShoppingList"></activity>
+        <activity android:name=".ShoppingLists" />
         <activity android:name=".Share" />
         <activity android:name=".Statistics" />
         <activity android:name=".ClosestShop" />
         <activity android:name=".PriceCheck" />
         <activity android:name=".GroupMessage" />
         <activity android:name=".Message" />
-        <activity android:name=".Shop" />
         <activity android:name=".UploadPhoto" />
         <activity android:name=".MainHub" />
         <activity android:name=".SignUp" />
