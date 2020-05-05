@@ -76,9 +76,8 @@ public class UploadPhoto extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(cr.getType(uri));
     }
 
-    public void updateUI(){
-        Intent myIntent = new Intent(getBaseContext(), MainHub.class);
-        startActivity(myIntent);
+    public void skip(android.view.View view){
+        finish();
 
     }
 
