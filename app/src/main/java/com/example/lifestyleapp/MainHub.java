@@ -60,6 +60,7 @@ public class MainHub extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         DocumentSnapshot document = task.getResult();
                         if(document.exists()){
+                            // if a document exists in the database matching user's id, print their name to the welcome message
                             welcomeMsg.setText("Welcome "+ document.get("name"));
                         }else{
                             //if no document exists for the user ID, create one with default values:
@@ -68,6 +69,11 @@ public class MainHub extends AppCompatActivity {
                             defaultData.put("profileImg","default.jpg");
                             //TODO create a default profile image
                             docRef.set(defaultData);
+
+                            // start UploadPhoto activity to prompt user to create a profile
+                            //TODO implement a way for the user to update their name
+                            Intent myIntent = new Intent(getBaseContext(),UploadPhoto.class);
+                            startActivity(myIntent);
                         }
                     }
                 });
