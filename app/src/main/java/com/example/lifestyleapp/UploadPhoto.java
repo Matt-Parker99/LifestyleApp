@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.annotations.Nullable;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -23,7 +25,11 @@ public class UploadPhoto extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public Uri imguri;
     private String userID;
-    FirebaseUser user;
+    private FirebaseUser user;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +62,15 @@ public class UploadPhoto extends AppCompatActivity {
     public void uploadFile(android.view.View view) {
         // Retrieve user's unique ID
         userID = user.getUid();
+        final DocumentReference userDocRef = db.collection("users").document(userID);
         if (!(imguri == null)) {
             try {
+                String fileName = userID + "." + getExtension(imguri);
                 // Create a reference in storage to a new file "(userID).(file extension)
-                StorageReference ref = mStorageRef.child("userImages/" + userID + "." + getExtension(imguri));
+                StorageReference ref = mStorageRef.child("userImages/" + fileName);
                 ref.putFile(imguri);
+                // Update file reference in user's database entry:
+                userDocRef.update("photo", fileName);
                 Toast.makeText(getApplicationContext(), "Upload Successful!", Toast.LENGTH_SHORT).show();
             } catch(Exception e) {
                 Log.e("UploadPhoto","Error uploading photo");

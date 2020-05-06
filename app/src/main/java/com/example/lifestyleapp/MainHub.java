@@ -1,6 +1,7 @@
 package com.example.lifestyleapp;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -10,15 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,12 +68,38 @@ public class MainHub extends AppCompatActivity {
                         if(document.exists()){
                             // if a document exists in the database matching user's id, print their name to the welcome message
                             welcomeMsg.setText("Welcome "+ document.get("name"));
+
+                            pic = findViewById(R.id.imageView);
+                            String filename = document.get("photo").toString();
+
+                            StorageReference photoRef= mStorageRef.child("userImages/"+filename);
+
+                            File localFile = null;
+                            try {
+                                localFile = File.createTempFile("image", "jpg");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            final String filePath = localFile.getPath();
+
+                            photoRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                    pic.setImageBitmap(BitmapFactory.decodeFile(filePath));
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception exception) {
+                                    exception.printStackTrace();
+                                }
+                            });
+
+
                         }else{
                             //if no document exists for the user ID, create one with default values:
                             Map<String, Object> defaultData = new HashMap<>();
                             defaultData.put("name", "User");
-                            defaultData.put("profileImg","default.jpg");
-                            //TODO create a default profile image
+                            defaultData.put("photo","default.jpg");
                             docRef.set(defaultData);
 
                             // start UploadPhoto activity to prompt user to create a profile
@@ -85,57 +117,6 @@ public class MainHub extends AppCompatActivity {
         }else{
             //TODO Handle the situation where we get to the MainHub but user is somehow Null
         }
-
-
-        // below block of code currently causes program to crash
-        /*
-
-        email = findViewById(R.id.email);
-        pic = findViewById(R.id.imageView);
-
-        if (user != null) {
-            String email1 = user.getEmail();
-            final FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference ref = database.getReference("users/" + user.getUid());
-
-
-
-            ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    DataSnapshot snapshot = dataSnapshot.child("Name");
-                    String name = snapshot.getValue().toString();
-                    fullName.setText(name);
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-            email.setText(email1);
-            try {
-                url = user.getUid();
-                final File localFile = File.createTempFile(url, "jpg");
-                StorageReference Ref = mStorageRef.child(url + ".jpg");
-                Ref.getFile(localFile)
-                        .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                // Successfully downloaded data to local file
-                                Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
-                                pic.setImageBitmap(bitmap);
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle failed download
-                        // ...
-                    }
-                });
-            } catch (Exception e) {
-            }
-        }*/
     }
 
     // Button functions
