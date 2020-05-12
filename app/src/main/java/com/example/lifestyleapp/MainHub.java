@@ -142,8 +142,8 @@ public class MainHub extends AppCompatActivity {
         startActivity(myIntent);
     }
     // closestShop button, starts closest-shop activity
-    public void closestShop(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),ClosestShop.class);
+    public void recipeTypeSelection(android.view.View view){
+        Intent myIntent = new Intent(getBaseContext(), recipeTypeSection.class);
         startActivity(myIntent);
     }
     // statistics button, starts statistics activity
