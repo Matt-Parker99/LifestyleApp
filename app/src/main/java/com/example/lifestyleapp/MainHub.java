@@ -109,7 +109,7 @@ public class MainHub extends AppCompatActivity {
     }
 
     public void editProfile(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),UploadPhoto.class);
+        Intent myIntent = new Intent(getBaseContext(), EditProfile.class);
         startActivity(myIntent);
     }
 
@@ -165,9 +165,9 @@ public class MainHub extends AppCompatActivity {
                             defaultData.put("photo", "default.jpg");
                             docRef.set(defaultData);
 
-                            // start UploadPhoto activity to prompt user to create a profile
+                            // start EditProfile activity to prompt user to create a profile
                             //TODO implement a way for the user to update their name
-                            Intent myIntent = new Intent(getBaseContext(), UploadPhoto.class);
+                            Intent myIntent = new Intent(getBaseContext(), EditProfile.class);
                             startActivity(myIntent);
                         }
                     }

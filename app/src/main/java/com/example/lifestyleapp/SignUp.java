@@ -1,35 +1,33 @@
 package com.example.lifestyleapp;
 
 // Android Imports
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
-// Firebase Imports
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+// Firebase Imports
 
 public class SignUp extends AppCompatActivity {
     private static final String TAG = "your-tag-name";
     private EditText mail;
     private EditText pass;
     private EditText cpass;
-    private EditText name;
 
     // String variables
     private String email;
     private String password;
     private String conPassword;
-    private String fullname;
 
     // Firebase variable
     private FirebaseAuth mAuth;
@@ -53,10 +51,7 @@ public class SignUp extends AppCompatActivity {
         cpass = findViewById(R.id.conPassword);
         conPassword = cpass.getText().toString();
 
-        name = findViewById(R.id.name);
-        fullname = name.getText().toString();
 
-        Log.e("Name:", fullname);
         Log.e("Email:", email);
         Log.e("Password:", password);
         Log.e("ConPassword:", conPassword);
@@ -88,14 +83,6 @@ public class SignUp extends AppCompatActivity {
     public void back(android.view.View view) {
         Intent myIntent = new Intent(getBaseContext(), MainActivity.class);
         startActivity(myIntent);
-    }
-
-    //Will prob be used to store usernames etc.
-    public void addUser(String uid, String name){
-        // Write message to database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("TABLE NAME");
-        myRef.child(uid).child("name").setValue(name);
     }
 
     public void updateUI(com.google.firebase.auth.FirebaseUser user) {

@@ -6,21 +6,27 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class UploadPhoto extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity {
     ImageView img;
+    EditText nameText;
     private StorageReference mStorageRef;
     private FirebaseAuth mAuth;
     public Uri imguri;
@@ -34,12 +40,29 @@ public class UploadPhoto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload_photo);
+        setContentView(R.layout.activity_edit_profile);
 
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         img = (ImageView) findViewById(R.id.profile);
+        nameText = (EditText) findViewById(R.id.editText);
+
+        final DocumentReference docRef = db.collection("users").document(user.getUid());
+
+        try {
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        nameText.setText(document.get("name").toString());
+                    }
+                }
+            });
+        }catch (Exception e) {
+            Log.e(e.toString(), "Error accessing user document");
+        }
     }
 
     // Starts an external activity to choose a photo from the phone's storage
@@ -72,14 +95,21 @@ public class UploadPhoto extends AppCompatActivity {
                 // Update file reference in user's database entry:
                 userDocRef.update("photo", fileName);
                 Toast.makeText(getApplicationContext(), "Upload Successful!", Toast.LENGTH_SHORT).show();
-            } catch(Exception e) {
-                Log.e("UploadPhoto","Error uploading photo");
+            } catch (Exception e) {
+                Log.e("EditProfile", "Error uploading photo");
                 Toast.makeText(getApplicationContext(), "Error uploading photo", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "No Image selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "No new Image selected", Toast.LENGTH_SHORT).show();
+        }
+        // Update the user's name:
+        try {
+            userDocRef.update("name", nameText.getText().toString());
+        }catch(Exception e){
+            Log.e("EditProfile", "Name not updated");
         }
     }
+
     private String getExtension(Uri uri) {
         ContentResolver cr = getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();

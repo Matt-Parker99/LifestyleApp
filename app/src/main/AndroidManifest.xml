@@ -20,7 +20,7 @@
         <activity android:name=".PriceCheck" />
         <activity android:name=".GroupMessage" />
         <activity android:name=".Message" />
-        <activity android:name=".UploadPhoto" />
+        <activity android:name=".EditProfile" />
         <activity android:name=".MainHub" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
