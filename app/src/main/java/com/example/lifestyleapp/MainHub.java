@@ -48,78 +48,22 @@ public class MainHub extends AppCompatActivity {
 
         // Firebase handlers:
         mAuth = FirebaseAuth.getInstance();
-        final FirebaseUser user = mAuth.getCurrentUser();
+
         mStorageRef = FirebaseStorage.getInstance().getReference();
         // Firestore database handler:
-        final FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        // Check that a user is logged in:
-        if (user != null) {
-            // Fetch the unique user ID
-            String userId = user.getUid();
-            // Create a reference to access the document corresponding to the userID in the users Collection:
-            final DocumentReference docRef = db.collection("users").document(userId);
-
-            try {
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        DocumentSnapshot document = task.getResult();
-                        if(document.exists()){
-                            // if a document exists in the database matching user's id, print their name to the welcome message
-                            welcomeMsg.setText("Welcome "+ document.get("name"));
-
-                            pic = findViewById(R.id.imageView);
-                            String filename = document.get("photo").toString();
-
-                            StorageReference photoRef= mStorageRef.child("userImages/"+filename);
-
-                            File localFile = null;
-                            try {
-                                localFile = File.createTempFile("image", "jpg");
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            final String filePath = localFile.getPath();
-
-                            photoRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                    pic.setImageBitmap(BitmapFactory.decodeFile(filePath));
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception exception) {
-                                    exception.printStackTrace();
-                                }
-                            });
 
 
-                        }else{
-                            //if no document exists for the user ID, create one with default values:
-                            Map<String, Object> defaultData = new HashMap<>();
-                            defaultData.put("name", "User");
-                            defaultData.put("photo","default.jpg");
-                            docRef.set(defaultData);
+        loadUserData();
 
-                            // start UploadPhoto activity to prompt user to create a profile
-                            //TODO implement a way for the user to update their name
-                            Intent myIntent = new Intent(getBaseContext(),UploadPhoto.class);
-                            startActivity(myIntent);
-                        }
-                    }
-                });
-            }
-            catch(Exception e){
-                Log.e(e.toString(), "Error accessing user document");
-                //TODO handle this error properly, (try again or log the user out?)
-            }
-        }else{
-            //TODO Handle the situation where we get to the MainHub but user is somehow Null
-        }
     }
 
-    // Button functions
+    @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        loadUserData();
+    }
+
 
     // shop button, starts to shop activity
     public void shop(android.view.View view){
@@ -167,6 +111,74 @@ public class MainHub extends AppCompatActivity {
     public void editProfile(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),UploadPhoto.class);
         startActivity(myIntent);
+    }
+
+    void loadUserData() {
+        final FirebaseUser user = mAuth.getCurrentUser();
+        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+        // Check that a user is logged in:
+        if (user != null) {
+            // Fetch the unique user ID
+            String userId = user.getUid();
+            // Create a reference to access the document corresponding to the userID in the users Collection:
+            final DocumentReference docRef = db.collection("users").document(userId);
+
+            try {
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            // if a document exists in the database matching user's id, print their name to the welcome message
+                            welcomeMsg.setText("Welcome " + document.get("name"));
+
+                            pic = findViewById(R.id.imageView);
+                            String filename = document.get("photo").toString();
+
+                            StorageReference photoRef = mStorageRef.child("userImages/" + filename);
+
+                            File localFile = null;
+                            try {
+                                localFile = File.createTempFile("image", "jpg");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            final String filePath = localFile.getPath();
+
+                            photoRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                    pic.setImageBitmap(BitmapFactory.decodeFile(filePath));
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception exception) {
+                                    exception.printStackTrace();
+                                }
+                            });
+
+
+                        } else {
+                            //if no document exists for the user ID, create one with default values:
+                            Map<String, Object> defaultData = new HashMap<>();
+                            defaultData.put("name", "User");
+                            defaultData.put("photo", "default.jpg");
+                            docRef.set(defaultData);
+
+                            // start UploadPhoto activity to prompt user to create a profile
+                            //TODO implement a way for the user to update their name
+                            Intent myIntent = new Intent(getBaseContext(), UploadPhoto.class);
+                            startActivity(myIntent);
+                        }
+                    }
+                });
+            } catch (Exception e) {
+                Log.e(e.toString(), "Error accessing user document");
+                //TODO handle this error properly, (try again or log the user out?)
+            }
+        } else {
+            //TODO Handle the situation where we get to the MainHub but user is somehow Null
+        }
     }
 }
 
