@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".standardRecipes"></activity>
+        <activity android:name=".avocadoOnToast"></activity>
+        <activity android:name=".standardRecipes" />
         <activity android:name=".vegan" />
         <activity android:name=".vegetarian" />
         <activity android:name=".AddShoppingList" />
