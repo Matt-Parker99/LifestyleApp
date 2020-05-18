@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 public class avocadoOnToast extends AppCompatActivity {
 
-    String ingredients[] = {"",""," "};
+    String ingredients[] = {"chick peas","white meso paste","seasame oil","lemon","avocado","rye bread","seasame seeds","spring onion"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class avocadoOnToast extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), avocadoOnToast.class);
         // Database/Firebase stuff so we could get the instance or whatever
         // Iterate through the ingredients list and insert into table one by one?
+        // We can create a new activity/feature on the main hub, think it would be best to remove the group chat feature as it's not essential
     }
 
     public void home(android.view.View view){
