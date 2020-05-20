@@ -3,15 +3,40 @@ package com.example.lifestyleapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.Nullable;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class avocadoOnToast extends AppCompatActivity {
+
+    private StorageReference mStorageRef;
+    private FirebaseAuth mAuth;
+    //public Uri imguri;
+    private String userID;
+    private FirebaseUser user;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     String ingredients[] = {"chick peas","white meso paste","seasame oil","lemon","avocado","rye bread","seasame seeds","spring onion"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avocado_on_toast);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+
+
+
     }
 
     public void back(android.view.View view){
@@ -21,12 +46,26 @@ public class avocadoOnToast extends AppCompatActivity {
 
 
     public void addToShoppingList(android.view.View view){
-        // Will research on how we can add the ingredients to a row of a table for a specific user
-        Intent myIntent = new Intent(getBaseContext(), avocadoOnToast.class);
-        // Database/Firebase stuff so we could get the instance or whatever
-        // Iterate through the ingredients list and insert into table one by one?
-        // We can create a new activity/feature on the main hub, think it would be best to remove the group chat feature as it's not essential
-    }
+        // Identify the user
+        // Iterate through the list of ingredients
+        // Perform insert statements adding the ingredients to a row of the users table which we can display in another activity
+        userID = user.getUid();
+        //final DocumentReference userDocRef = db.collection("users").document(userID);
+        try {
+            for(String ingredient : ingredients) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("users");
+                myRef.child(userID).child("Shopping List").setValue(ingredient);
+                // Success message
+                Toast.makeText(getApplicationContext(), "Successfully Added To Shopping List!", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    };
+
+    
 
     public void home(android.view.View view){
         // User is sent back to the mainhub
