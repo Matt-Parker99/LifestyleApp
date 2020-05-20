@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".standardRecipes"></activity>
+        <activity android:name=".GazpachoSauceSpaghettiRecipe"></activity>
+        <activity android:name=".avocadoOnToast" />
+        <activity android:name=".standardRecipes" />
         <activity android:name=".vegan" />
         <activity android:name=".vegetarian" />
         <activity android:name=".AddShoppingList" />
@@ -18,7 +20,7 @@
         <activity android:name=".Statistics" />
         <activity android:name=".recipeTypeSection" />
         <activity android:name=".PriceCheck" />
-        <activity android:name=".GroupMessage" />
+        <activity android:name=".recipeShoppingList" />
         <activity android:name=".Message" />
         <activity android:name=".EditProfile" />
         <activity android:name=".MainHub" />
