@@ -77,7 +77,7 @@ public class MainHub extends AppCompatActivity {
     }
     // group-message button, starts to group-message activity
     public void groupMessage(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),GroupMessage.class);
+        Intent myIntent = new Intent(getBaseContext(), Message.class);
         startActivity(myIntent);
     }
     // price check button, starts to price-check activity
@@ -85,7 +85,7 @@ public class MainHub extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(),PriceCheck.class);
         startActivity(myIntent);
     }
-    
+
     public void recipeTypeSelection(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(), recipeTypeSection.class);
         startActivity(myIntent);
