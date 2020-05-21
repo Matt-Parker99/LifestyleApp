@@ -1,8 +1,5 @@
 package com.example.lifestyleapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.annotations.Nullable;
 
@@ -48,16 +48,16 @@ public class vegan extends AppCompatActivity {
                 if (position ==  0) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
                 }
-                if (position ==  0) {
+                if (position ==  1) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
                 }
-                if (position ==  0) {
+                if (position ==  2) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
                 }
-                if (position ==  0) {
+                if (position ==  3) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
                 }
-                if (position ==  0) {
+                if (position ==  4) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
                 }
             }
