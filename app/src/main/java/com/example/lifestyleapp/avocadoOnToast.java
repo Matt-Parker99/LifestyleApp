@@ -24,14 +24,16 @@ public class avocadoOnToast extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     String ingredients[] = {"chick peas","white meso paste","seasame oil","lemon","avocado","rye bread","seasame seeds","spring onion"};
+    // Quantity list
+    Double quantities[] = {.400,1.0,1.0,0.5,0.5,1.0,4.0,1.0};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_avocado_on_toast);
-        mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-
+        setContentView(R.layout.activity_avocado_on_toast);
+//        mAuth = FirebaseAuth.getInstance();
+//        user = mAuth.getCurrentUser();
+//        mStorageRef = FirebaseStorage.getInstance().getReference();
 
 
     }
@@ -43,24 +45,27 @@ public class avocadoOnToast extends AppCompatActivity {
 
 
     public void addToShoppingList(android.view.View view){
-        // Identify the user
-        // Iterate through the list of ingredients
-        // Perform insert statements adding the ingredients to a row of the users table which we can display in another activity
         userID = user.getUid();
-        //final DocumentReference userDocRef = db.collection("users").document(userID);
-        try {
-            for(String ingredient : ingredients) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("users");
-                myRef.child(userID).child("Shopping List").setValue(ingredient);
-                // Success message
-                Toast.makeText(getApplicationContext(), "Successfully Added To Shopping List!", Toast.LENGTH_SHORT).show();
-            }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+     try {
+
+         int i = 0;
+         for(String ingredient: ingredients){
+             FirebaseDatabase database = FirebaseDatabase.getInstance();
+             DatabaseReference newIngredientRef = database.getReference("users/" + userID + "/list").push();
+             newIngredientRef.setValue("id", ingredient);
+             newIngredientRef.setValue("quantity", quantities[i]);
+             i = i+1;
+         }
+         // Success message
+         Toast.makeText(getApplicationContext(),"Successfully Added To Shopping List!",Toast.LENGTH_SHORT).show();
+
+     } catch (Exception e) {
+         e.printStackTrace();
+     };
+
     };
+
 
     
 
