@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".spicyLentilBurgers">
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="229dp"
+        android:layout_height="32dp"
+        android:text="Step 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="229dp"
+        android:layout_height="32dp"
+        android:text="Step 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="193dp"
+        android:layout_height="53dp"
+        android:text="STEP 1
+Heat the vegetable oil in a frying pan and gently cook the finely chopped red onions with
+a pinch of salt for 5 minutes or until really soft. Add the garlic and ginger pastes and
+curry powder, and continue to cook gently for 2 minutes. Tip out into a bowl.
+• STEP 2
+Put the lentils into a food processor and pulse until roughly blended but not too smooth.
+Tip out into the onion bowl, add some seasoning and mix well. Add the flour and stir well
+to combine. Using slightly wet hands, form the mix into 4 equal-sized patties. Put into the
+fridge to chill for 30 minutes."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="229dp"
+        android:layout_height="106dp"
+        android:text="• STEP 3
+Meanwhile, put the sliced red onion into a bowl and pour over enough boiling water to
+cover. Leave for 5 minutes then drain well and add the vinegar and some seasoning.
+• STEP 4
+• Heat a little oil in a frying pan and cook the lentil burgers for 4 minutes on each side or
+until caramelised. Put onto the bases of each bun, top with some mango chutney, lettuce
+leaves, a tomato slice, a pile of the pickled onions, a few coriander leaves and the bun
+top. "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="168dp"
+        android:layout_height="39dp"
+        android:text="• vegetable oil 2 tsp, plus a little extra for frying"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="red onions 1½, finely chopped, ½, thinly sliced
+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="339dp"
+        android:layout_height="55dp"
+        android:text="               Spicy Lentil Burger"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="414dp"
+        android:layout_height="142dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205"
+        app:srcCompat="@drawable/burger" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add ingredients to shopping list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
+        android:text="Ingredients:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="181dp"
+        android:layout_height="41dp"
+        android:text="garlic paste 2 tsp
+• ginger paste 2 tsp
+• hot curry powder 2 tbsp
+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="brown lentils 2 x 400g tins,plain flour 4 tbsp
+• white wine vinegar 1 tbsp
+
+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="
+ seeded burger buns 4, halved and toasted
+    • mango chutney 4 tsp
+    • lettuce leaves 4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text=" • tomato slices 4
+• coriander leaves (optional)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="229dp"
+        android:layout_height="32dp"
+        android:text="Steps:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="133dp"
+        android:layout_height="71dp"
+        android:background="#ffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton17"
+        app:layout_constraintStart_toEndOf="@+id/logout"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="139dp"
+        android:layout_height="71dp"
+        android:background="#ffff"
+        android:onClick="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="139dp"
+        android:layout_height="71dp"
+        android:background="#ffff"
+        android:onClick="share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_share_black_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
