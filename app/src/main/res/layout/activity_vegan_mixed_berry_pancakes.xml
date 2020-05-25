@@ -18,15 +18,15 @@ Tip the flour, caster sugar, baking powder and salt into a bowl, and mix to
 combine. Pour in the vanilla and almond milk, and whisk to fully combine."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintVertical_bias="0.451" />
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="283dp"
-        android:layout_height="205dp"
+        android:layout_width="229dp"
+        android:layout_height="174dp"
         android:text="Heat a non-stick frying pan over a medium heat with 2 tsp of oil. Swirl the
 pan so the oil coats the entire surface, and carefully wipe clean with
 kitchen paper. Add a heaped tbsp of batter to the pan and cook the
@@ -37,7 +37,7 @@ oven while you cook the rest "
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.696" />
 
     <TextView
         android:id="@+id/textView23"
@@ -206,7 +206,7 @@ oven while you cook the rest "
 
     <ImageButton
         android:id="@+id/imageButton15"
-        android:layout_width="228dp"
+        android:layout_width="135dp"
         android:layout_height="72dp"
         android:layout_marginEnd="16dp"
         android:background="#ffff"

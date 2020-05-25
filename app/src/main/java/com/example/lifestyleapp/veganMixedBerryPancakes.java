@@ -28,7 +28,7 @@ public class veganMixedBerryPancakes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gazpacho_sauce_spaghetti_recipe);
+        setContentView(R.layout.activity_vegan_mixed_berry_pancakes);
 
     }
 

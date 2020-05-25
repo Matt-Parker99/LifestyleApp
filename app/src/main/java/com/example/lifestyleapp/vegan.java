@@ -1,6 +1,7 @@
 package com.example.lifestyleapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +22,9 @@ public class vegan extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Recipe 1", "Recipe 2", "Recipe 3", "Recipe 4", "Recipe 5"};
-    String mDescription[] = {"Recipe 1 Description", "Recipe 2 Description", "Recipe 3 Description", "Recipe 4 Description", "Recipe 5 Description"};
-    int images[] = {R.drawable.ic_euro_symbol_black_24dp, R.drawable.ic_euro_symbol_black_24dp, R.drawable.ic_euro_symbol_black_24dp, R.drawable.ic_euro_symbol_black_24dp, R.drawable.ic_euro_symbol_black_24dp};
+    String mTitle[] = {"Avocado On Toast", "Gazpacho Sauce Spaghetti", "Spicy Lentil Burgers", "Green Thai Tofu Curry", "Vegan Mixed Berry Pancakes"};
+    String mDescription[] = {"456 Calories", "361 Calories", "496 Calories", "483 Calories", "464 Calories"};
+    int images[] = {R.drawable.avocadotoast, R.drawable.spaghetti, R.drawable.burger, R.drawable.curry, R.drawable.pancakes};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -47,18 +48,28 @@ public class vegan extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), avocadoOnToast.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  1) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), GazpachoSauceSpaghettiRecipe.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  2) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), spicyLentilBurgers.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  3) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), tofuCurry.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  4) {
                     Toast.makeText(vegan.this, "Recipe Description", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), veganMixedBerryPancakes.class);
+                    startActivity(myIntent);
                 }
             }
         });
