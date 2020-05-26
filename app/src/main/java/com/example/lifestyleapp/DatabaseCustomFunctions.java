@@ -5,25 +5,25 @@ import android.util.Log;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class databaseCustomFunctions {
+public class DatabaseCustomFunctions {
 
-    private final FirebaseAuth mAuth;
-    private final StorageReference mStorageRef;
-    private final FirebaseFirestore db;
-    private final FirebaseUser user;
-    private final String UserId;
+    public final FirebaseAuth mAuth;
+    public final FirebaseFirestore mStorage;
+    public final StorageReference mStorageRef;
+    public final FirebaseUser user;
+    public final String UserId;
 
     // Constructor
-    public databaseCustomFunctions(FirebaseAuth mAuth, StorageReference mStorageRef, FirebaseFirestore db){
-
-        this.mAuth = mAuth;
-        this.mStorageRef = mStorageRef;
-        this.db = db;
+    public DatabaseCustomFunctions(){
+        this.mAuth = FirebaseAuth.getInstance();
+        this.mStorage = FirebaseFirestore.getInstance();
+        this.mStorageRef = FirebaseStorage.getInstance().getReference();
         this.user = this.mAuth.getCurrentUser();
         this.UserId = this.user.getUid();
     }
@@ -34,7 +34,7 @@ public class databaseCustomFunctions {
             data.put("name", name);
             data.put("price", price);
 
-            db.collection("products").add(data);
+            mStorage.collection("products").add(data);
         } catch (Exception e) {
             Log.e("databaseCustomFunctions : CreateNewIngredients", e.getLocalizedMessage());
             e.printStackTrace();

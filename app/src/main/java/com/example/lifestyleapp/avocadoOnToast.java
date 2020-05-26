@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class avocadoOnToast extends AppCompatActivity {
@@ -30,7 +29,7 @@ public class avocadoOnToast extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avocado_on_toast);
+//        setContentView(R.layout.activity_avocado_on_toast);
 //        mAuth = FirebaseAuth.getInstance();
 //        user = mAuth.getCurrentUser();
 //        mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -40,6 +39,7 @@ public class avocadoOnToast extends AppCompatActivity {
 
     public void back(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(), vegan.class);
+        this.finish();
         startActivity(myIntent);
     }
 

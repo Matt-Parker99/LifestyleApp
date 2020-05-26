@@ -16,21 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.annotations.Nullable;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class PriceCheck extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-    private StorageReference mStorageRef;
-    private FirebaseUser user;
-    private FirebaseFirestore db;
+    public DatabaseCustomFunctions dbRef;
 
 
     ListView listView;
@@ -40,17 +32,12 @@ public class PriceCheck extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_price_check);
 
-        mAuth = FirebaseAuth.getInstance();
-        user = mAuth.getCurrentUser();
-        db = FirebaseFirestore.getInstance();
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-
         listView = findViewById(R.id.productsView);
 
         final Context myContext = this;
 
-
-        db.collection("products")
+        // The following code adapts
+        dbRef.mStorage.collection("products")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
