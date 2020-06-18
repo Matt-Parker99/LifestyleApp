@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".spicyLentilBurgers"></activity>
+        <activity android:name=".yakiNoodles"></activity>
+        <activity android:name=".Rigatoni" />
+        <activity android:name=".courgettiRecipe" />
+        <activity android:name=".pastaSalad" />
+        <activity android:name=".seedySalad" />
+        <activity android:name=".spicyLentilBurgers" />
         <activity android:name=".veganMixedBerryPancakes" />
         <activity android:name=".tofuCurry" />
         <activity android:name=".GazpachoSauceSpaghettiRecipe" />
