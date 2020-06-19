@@ -6,4 +6,204 @@
     android:layout_height="match_parent"
     tools:context=".courgettiRecipe">
 
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="229dp"
+        android:layout_height="32dp"
+        android:text="Step 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="229dp"
+        android:layout_height="32dp"
+        android:text="Step 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="193dp"
+        android:layout_height="53dp"
+        android:text="• STEP 1
+Toss the tomatoes with 1 tsp oil, garlic and balsamic vinegar and some
+seasoning. Tip into a frying pan and cook for 5 minutes until the whole
+tomatoes start to burst and they are coated in the balsamic."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="229dp"
+        android:layout_height="106dp"
+        android:text="• STEP 2
+Pour a kettle of hot water over the courgette spaghetti and blanch for 30
+seconds. Drain really well, toss with the pesto and season well. Stir,
+coating the noodles, then add the tomatoes and toasted pine nuts to
+serve your courgetti. "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="168dp"
+        android:layout_height="39dp"
+        android:text="• baby plum tomatoes 8, 4 halved and 4 whole"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.647" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="• olive oil
+• garlic 1/2 clove, crushed
+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="339dp"
+        android:layout_height="55dp"
+        android:text="Courgetti with pesto and balsamic tomatoes"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="414dp"
+        android:layout_height="142dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205"
+        app:srcCompat="@drawable/superseedysalad" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add ingredients to shopping list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
+        android:text="Ingredients:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
+
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="178dp"
+        android:layout_height="79dp"
+        android:text="• balsamic vinegar 1 tbsp
+• courgette 1 large, spiralised or very thinly shredded into noodles
+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="• fresh vegetarian pesto 2 tbsp
+• pine nuts 1 tbsp, toasted
+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="229dp"
+        android:layout_height="32dp"
+        android:text="Steps:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.989"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="133dp"
+        android:layout_height="71dp"
+        android:background="#ffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton17"
+        app:layout_constraintStart_toEndOf="@+id/logout"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="139dp"
+        android:layout_height="71dp"
+        android:background="#ffff"
+        android:onClick="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="139dp"
+        android:layout_height="71dp"
+        android:background="#ffff"
+        android:onClick="share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_share_black_24dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
