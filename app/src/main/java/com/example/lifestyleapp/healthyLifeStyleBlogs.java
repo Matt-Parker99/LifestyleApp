@@ -24,8 +24,8 @@ public class healthyLifeStyleBlogs extends AppCompatActivity {
 
     ListView listView;
     String mTitle[] = {"Delish Knowledge","The Real Food Dietitians","Fit Foodie Finds","Toby Amidor Nutrition","Peanut Butter Fingers","The Healthy Maven","Fitful Focus","Nutrition Twins","The Art of Healthy Living"};
-    String mDescription[] = {"Description",};
-    int images[] = {};
+    String mDescription[] = {"Click to find out more!","Click to find out more!","Click to find out more!","Click to find out more!","Click to find out more!","Click to find out more!","Click to find out more!","Click to find out more!","Click to find out more!",};
+    int images[] = {R.drawable.delish_knowledge_400x400,R.drawable.the_real_food_dietitians_400x400,R.drawable.fit_foodie_finds_400x400,R.drawable.tony_amidor_400x400,R.drawable.pb_fingers_400x400,R.drawable.healthy_maven_400x400,R.drawable.fitful_focus_400x400,R.drawable.nutrition_twins,R.drawable.art_of_healthy_living_400x400};
     String mUrls[] = {"https://www.healthline.com/nutrition","https://therealfoodrds.com/","https://fitfoodiefinds.com/","https://tobyamidornutrition.com/my-blog/","https://www.pbfingers.com/","https://www.thehealthymaven.com/","https://fitfulfocus.com/","https://nutritiontwins.com/blog/","https://artofhealthyliving.com/about/"};
     // so our images and other things are set in array
 
@@ -34,7 +34,7 @@ public class healthyLifeStyleBlogs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegan);
+        setContentView(R.layout.activity_healthy_life_style_blogs);
 
         listView = findViewById(R.id.listView);
         // now create an adapter class
@@ -146,6 +146,11 @@ public class healthyLifeStyleBlogs extends AppCompatActivity {
 
             return row;
         }
+    }
+
+    public void home(android.view.View view) {
+        Intent myIntent = new Intent(getBaseContext(), MainHub.class);
+        startActivity(myIntent);
     }
 }
 

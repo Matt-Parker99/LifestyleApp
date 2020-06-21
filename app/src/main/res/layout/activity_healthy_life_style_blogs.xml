@@ -8,11 +8,20 @@
     tools:context=".healthyLifeStyleBlogs">
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/listView"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="645dp">
 
     </ListView>
 
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="home"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+
 </LinearLayout>
+
