@@ -23,10 +23,10 @@ public class healthyLifeStyleBlogs extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Blogs"};
-    String mDescription[] = {"Description"};
+    String mTitle[] = {"Delish Knowledge","The Real Food Dietitians","Fit Foodie Finds","Toby Amidor Nutrition","Peanut Butter Fingers","The Healthy Maven","Fitful Focus","Nutrition Twins","The Art of Healthy Living"};
+    String mDescription[] = {"Description",};
     int images[] = {};
-    String mUrls[] = {"Urls have to be stored as strings"};
+    String mUrls[] = {"https://www.healthline.com/nutrition","https://therealfoodrds.com/","https://fitfoodiefinds.com/","https://tobyamidornutrition.com/my-blog/","https://www.pbfingers.com/","https://www.thehealthymaven.com/","https://fitfulfocus.com/","https://nutritiontwins.com/blog/","https://artofhealthyliving.com/about/"};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -76,6 +76,34 @@ public class healthyLifeStyleBlogs extends AppCompatActivity {
                     Toast.makeText(healthyLifeStyleBlogs.this, "Re-directing to blog webpage", Toast.LENGTH_SHORT).show();
                     // We will use an intent which will re-direct to a web page
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrls[4]));
+                    startActivity(myIntent);
+                }
+
+                if (position ==  5) {
+                    Toast.makeText(healthyLifeStyleBlogs.this, "Re-directing to blog webpage", Toast.LENGTH_SHORT).show();
+                    // We will use an intent which will re-direct to a web page
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrls[5]));
+                    startActivity(myIntent);
+                }
+
+                if (position ==  6) {
+                    Toast.makeText(healthyLifeStyleBlogs.this, "Re-directing to blog webpage", Toast.LENGTH_SHORT).show();
+                    // We will use an intent which will re-direct to a web page
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrls[6]));
+                    startActivity(myIntent);
+                }
+
+                if (position ==  7) {
+                    Toast.makeText(healthyLifeStyleBlogs.this, "Re-directing to blog webpage", Toast.LENGTH_SHORT).show();
+                    // We will use an intent which will re-direct to a web page
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrls[7]));
+                    startActivity(myIntent);
+                }
+
+                if (position ==  8) {
+                    Toast.makeText(healthyLifeStyleBlogs.this, "Re-directing to blog webpage", Toast.LENGTH_SHORT).show();
+                    // We will use an intent which will re-direct to a web page
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrls[8]));
                     startActivity(myIntent);
                 }
             }
