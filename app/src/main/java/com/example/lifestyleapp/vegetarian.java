@@ -48,27 +48,27 @@ public class vegetarian extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
                     Toast.makeText(vegetarian.this, "Recipe Description", Toast.LENGTH_SHORT).show();
-                    Intent myintent = new Intent(getBaseContext(), vegetarian.class); // Class needs to be created and added
+                    Intent myintent = new Intent(getBaseContext(), seedySalad.class); // Class needs to be created and added
                     startActivity(myintent);
                 }
                 if (position ==  1) {
                     Toast.makeText(vegetarian.this, "Recipe Description", Toast.LENGTH_SHORT).show();
-                    Intent myintent = new Intent(getBaseContext(), vegetarian.class); // Class needs to be created and added
+                    Intent myintent = new Intent(getBaseContext(), pastaSalad.class); // Class needs to be created and added
                     startActivity(myintent);
                 }
                 if (position ==  2) {
                     Toast.makeText(vegetarian.this, "Recipe Description", Toast.LENGTH_SHORT).show();
-                    Intent myintent = new Intent(getBaseContext(), vegetarian.class); // Class needs to be created and added
+                    Intent myintent = new Intent(getBaseContext(), courgettiRecipe.class); // Class needs to be created and added
                     startActivity(myintent);
                 }
                 if (position ==  3) {
                     Toast.makeText(vegetarian.this, "Recipe Description", Toast.LENGTH_SHORT).show();
-                    Intent myintent = new Intent(getBaseContext(), vegetarian.class); // Class needs to be created and added
+                    Intent myintent = new Intent(getBaseContext(), Rigatoni.class); // Class needs to be created and added
                     startActivity(myintent);
                 }
                 if (position ==  4) {
                     Toast.makeText(vegetarian.this, "Recipe Description", Toast.LENGTH_SHORT).show();
-                    Intent myintent = new Intent(getBaseContext(), vegetarian.class); // Class needs to be created and added
+                    Intent myintent = new Intent(getBaseContext(), yakiNoodles.class); // Class needs to be created and added
                     startActivity(myintent);
                 }
             }
