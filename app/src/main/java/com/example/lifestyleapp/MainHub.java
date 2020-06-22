@@ -71,8 +71,8 @@ public class MainHub extends AppCompatActivity {
         startActivity(myIntent);
     }
     // message button, starts to message activity
-    public void message(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),Message.class);
+    public void blogs(android.view.View view){
+        Intent myIntent = new Intent(getBaseContext(),selectBlogType.class);
         startActivity(myIntent);
     }
     // group-message button, starts to group-message activity
