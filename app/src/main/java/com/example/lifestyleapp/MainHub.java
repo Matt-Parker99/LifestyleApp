@@ -2,10 +2,12 @@ package com.example.lifestyleapp;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,11 +77,15 @@ public class MainHub extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(),selectBlogType.class);
         startActivity(myIntent);
     }
-    // group-message button, starts to group-message activity
-    public void groupMessage(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(), Message.class);
+    // button to let the user go onto the web alternative to our application.
+    public void websiteVersion(android.view.View view){
+        Toast.makeText(MainHub.this, "Re-directing you to the online version", Toast.LENGTH_SHORT).show();
+        // We will use an intent which will re-direct to a web page
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://link to website"));
         startActivity(myIntent);
     }
+
+
     // price check button, starts to price-check activity
     public void priceCheck(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),PriceCheck.class);

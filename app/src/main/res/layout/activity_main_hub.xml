@@ -54,14 +54,14 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
-        android:onClick="groupMessage"
+        android:onClick="websiteVersion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.589"
-        app:srcCompat="@drawable/ic_message_black_24dp" />
+        app:srcCompat="@drawable/ic_language_black_24dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -80,7 +80,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
-        android:onClick="groupMessage"
+        android:onClick="websiteVersion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
