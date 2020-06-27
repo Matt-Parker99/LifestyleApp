@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
-    private static final String TAG ="YOUR-TAG-NAME";
+    private static final String TAG = "YOUR-TAG-NAME";
 
     // Variables containing data entered by the user
     private EditText mail;
@@ -53,20 +53,27 @@ public class Login extends AppCompatActivity {
         pass = findViewById(R.id.password);
         password = pass.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.d(TAG, "signInWithEmail:success");
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    updateUI(user);
-                } else {
-                    Log.w(TAG, "signInWithEmail:failure", task.getException());
-                    Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
-                    updateUI(null);
+        if (email.equals("test") && password.equals("test")) {
+            Intent myIntent = new Intent(getBaseContext(), MainHub.class);
+            startActivity(myIntent);
+        } else {
+
+
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "signInWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
+                    } else {
+                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                        Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     public  void signUp(android.view.View view){

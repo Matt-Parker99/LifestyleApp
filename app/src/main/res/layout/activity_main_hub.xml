@@ -94,7 +94,7 @@
         android:layout_width="151dp"
         android:layout_height="127dp"
         android:background="#ffff"
-        android:onClick="statistics"
+        android:onClick="blogs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
