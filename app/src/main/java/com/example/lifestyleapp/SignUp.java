@@ -41,13 +41,13 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void signUp(android.view.View view) {
-
+        // Obtain and convert the email to a string
         mail = findViewById(R.id.email);
         email = mail.getText().toString();
-
+        // Obtain and convert the password to a string
         pass = findViewById(R.id.password);
         password = pass.getText().toString();
-
+        // Obtain and convert the confirmation of password to a string
         cpass = findViewById(R.id.conPassword);
         conPassword = cpass.getText().toString();
 

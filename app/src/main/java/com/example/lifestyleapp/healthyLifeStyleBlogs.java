@@ -49,9 +49,13 @@ public class healthyLifeStyleBlogs extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
+                    // Display to the user that the webpage is loading
                     Toast.makeText(healthyLifeStyleBlogs.this, "Re-directing to blog webpage", Toast.LENGTH_SHORT).show();
                     // We will use an intent which will re-direct to a web page
+                    // The URL is found through the use of indexing of the list of urls
+                    // The urls parsed using the .parse function to check if it's valid
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mUrls[0]));
+                    // The intent to the page is activated using the startActivity method and is loaded
                     startActivity(myIntent);
                 }
                 if (position ==  1) {

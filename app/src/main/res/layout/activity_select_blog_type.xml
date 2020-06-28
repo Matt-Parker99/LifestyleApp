@@ -1,85 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:orientation="vertical"
     tools:context=".selectBlogType">
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="fitness"
-        android:text="Fitness"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        >
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="241dp"
-        android:layout_height="70dp"
-        android:text="     Blog Types"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151" />
+    </ListView>
 
-    <ImageButton
-        android:id="@+id/logout"
-        android:layout_width="139dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="661dp"
-        android:background="#ffff"
-        android:onClick="back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton15"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton17"
-        android:layout_width="139dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="661dp"
-        android:background="#ffff"
-        android:onClick="share"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton15"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_share_black_24dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="133dp"
-        android:layout_height="71dp"
-        android:background="#ffff"
-        android:onClick="home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton17"
-        app:layout_constraintStart_toEndOf="@+id/logout"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
-
-
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="lifestyle"
-        android:text="Lifestyle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

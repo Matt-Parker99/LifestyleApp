@@ -47,12 +47,13 @@ public class Login extends AppCompatActivity {
 
     public void login(android.view.View view) {
         // Validating signing in
+        // Obtaining email entered into field and Converting  to string
         mail = findViewById(R.id.email);
         email = mail.getText().toString();
-
+        // Obtaining the password entered and converting Converting  to string
         pass = findViewById(R.id.password);
         password = pass.getText().toString();
-
+        //Test Code so a new account doesnt need to be created every time when testing features
         if (email.equals("test") && password.equals("test")) {
             Intent myIntent = new Intent(getBaseContext(), MainHub.class);
             startActivity(myIntent);
@@ -62,11 +63,11 @@ public class Login extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
+                    if (task.isSuccessful()) { // If password and email are correct than sing in
                         Log.d(TAG, "signInWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
                         updateUI(user);
-                    } else {
+                    } else { // If password and email are not correct user is re-directed to sign up page
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                         Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                         updateUI(null);
