@@ -24,7 +24,7 @@ public class storeWebsites extends AppCompatActivity {
 
     ListView listView;
     String mTitle[] = {"Tesco","SuperValu","Aldi","Lidl","Dunnes Stores"};
-    String mDescription[] = {"Click here to create your own shopping List","Click here to access online stores"};
+    String mDescription[] = {"Tesco online store","SuperValu online store","Aldi online store","Lidl online store","Dunnes Stores online store"};
     int images[] = {R.drawable.tesco, R.drawable.supervalu,R.drawable.aldi,R.drawable.lidl,R.drawable.dunnesstores};
     String urls[] = {"https://www.tesco.ie/","https://supervalu.ie/","https://www.aldi.ie/","https://www.lidl.ie/","https://www.dunnesstores.com/"};
     // so our images and other things are set in array
@@ -34,7 +34,7 @@ public class storeWebsites extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_websites);
+        setContentView(R.layout.listofonlinestores);
 
         listView = findViewById(R.id.listView);
         // now create an adapter class
