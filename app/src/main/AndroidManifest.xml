@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".selectBlogType"></activity>
+        <activity android:name=".storeWebsites"></activity>
+        <activity android:name=".shoppingSelectFeature" />
+        <activity android:name=".selectBlogType" />
         <activity android:name=".fitnessBlogs" />
         <activity android:name=".healthyLifeStyleBlogs" />
         <activity android:name=".yakiNoodles" />
