@@ -56,7 +56,7 @@ public class shoppingSelectFeature extends AppCompatActivity {
                 }
                 if (position ==  1) {
                     Toast.makeText(shoppingSelectFeature.this, "Accessing Store Websites", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Intent myIntent = new Intent(getBaseContext(), storeWebsites.class);
                     startActivity(myIntent);
                 }
 
