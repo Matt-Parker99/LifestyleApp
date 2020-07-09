@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".discountWebsites"></activity>
+        <activity android:name=".vegetarianMealTypeSelection"></activity>
+        <activity android:name=".discountWebsites" />
         <activity android:name=".storeWebsites" />
         <activity android:name=".shoppingSelectFeature" />
         <activity android:name=".selectBlogType" />
