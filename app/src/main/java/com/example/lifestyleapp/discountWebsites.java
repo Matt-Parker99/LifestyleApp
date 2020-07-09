@@ -19,14 +19,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.annotations.Nullable;
 
-public class storeWebsites extends AppCompatActivity {
+public class discountWebsites extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Tesco","SuperValu","Aldi","Lidl","Dunnes Stores"};
-    String mDescription[] = {"Tesco online store","SuperValu online store","Aldi online store","Lidl online store","Dunnes Stores online store"};
-    int images[] = {R.drawable.tesco, R.drawable.supervalu,R.drawable.aldi,R.drawable.lidl,R.drawable.dunnesstores};
-    String urls[] = {"https://www.tesco.ie/","https://supervalu.ie/","https://www.aldi.ie/","https://www.lidl.ie/","https://www.dunnesstores.com/"};
+    String mTitle[] = {"Independent Discounts","Promo Codes Ireland","Groupon","Money Guide Ireland"};
+    String mDescription[] = {"Discounts and Promotions sourced by the Independent","Number 1 promo code and discount site in Ireland","Hub for massive discounts across a range of items","Ireland's leading money expert"};
+    int images[] = {R.drawable.irishindependent, R.drawable.promocodesireland,R.drawable.groupon,R.drawable.moneyguideireland};
+    String urls[] = {"https://discountcode.independent.ie/","https://www.promocodes.ie/","https://www.groupon.ie/","http://www.moneyguideireland.com/discount-alerts"};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -34,7 +34,7 @@ public class storeWebsites extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listofonlinestores);
+        setContentView(R.layout.activity_discount_websites);
 
         listView = findViewById(R.id.listView);
         // now create an adapter class
@@ -50,30 +50,26 @@ public class storeWebsites extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
                     // Once User Clicks the item they are displayed a accessing website prompt
-                    Toast.makeText(storeWebsites.this, "Accessing Tesco Website", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(discountWebsites.this, "Accessing Irish Independent Website", Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[0]));
                     startActivity(myIntent);
                 }
                 if (position ==  1) {
-                    Toast.makeText(storeWebsites.this, "Accessing SuperValu Website", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(discountWebsites.this, "Accessing Promo Codes ireland Website", Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[1]));
                     startActivity(myIntent);
                 }
                 if (position ==  2) {
-                    Toast.makeText(storeWebsites.this, "Accessing Aldi Website", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(discountWebsites.this, "Accessing Groupon Website", Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[2]));
                     startActivity(myIntent);
                 }
                 if (position ==  3) {
-                    Toast.makeText(storeWebsites.this, "Accessing Lidl Website", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(discountWebsites.this, "Accessing Irish Money Guide Website", Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[3]));
                     startActivity(myIntent);
                 }
-                if (position ==  4) {
-                    Toast.makeText(storeWebsites.this, "Accessing Dunnes Stores Website", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urls[4]));
-                    startActivity(myIntent);
-                }
+
 
 
 
@@ -120,5 +116,6 @@ public class storeWebsites extends AppCompatActivity {
         }
     }
 }
+
 
 

@@ -22,9 +22,9 @@ public class shoppingSelectFeature extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Shopping List Creator","Visit Online Websites Of Stores"};
-    String mDescription[] = {"Click here to create your own shopping List","Click here to access online stores"};
-    int images[] = {R.drawable.shoppinglist, R.drawable.onlineshopping};
+    String mTitle[] = {"Shopping List Creator","Visit Online Websites Of Stores","Visit A Selection Of Discount/Promotion Code Websites"};
+    String mDescription[] = {"Click here to create your own shopping List","Click here to access online stores","Click here to access online discount/promotion websites"};
+    int images[] = {R.drawable.shoppinglist, R.drawable.onlineshopping, R.drawable.discountlogo};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -59,6 +59,12 @@ public class shoppingSelectFeature extends AppCompatActivity {
                     Intent myIntent = new Intent(getBaseContext(), storeWebsites.class);
                     startActivity(myIntent);
                 }
+                if (position ==  2) {
+                    Toast.makeText(shoppingSelectFeature.this, "Accessing Discount Websites", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), discountWebsites.class);
+                    startActivity(myIntent);
+                }
+
 
 
 
