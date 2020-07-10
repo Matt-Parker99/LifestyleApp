@@ -76,6 +76,7 @@ public class SignUp extends AppCompatActivity {
                 }
             });
         } else {
+            Toast.makeText(getApplicationContext(), "Authentication failed passwords were not the same", Toast.LENGTH_SHORT).show();
             //Will need to output to screen that passwords were not the same
         }
     }
