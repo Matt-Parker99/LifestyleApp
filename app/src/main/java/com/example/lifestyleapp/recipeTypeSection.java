@@ -50,7 +50,7 @@ public class recipeTypeSection extends AppCompatActivity {
                     // Once User Clicks the item they are displayed a recipe description prompt
                     Toast.makeText(recipeTypeSection.this, "Accessing Vegan Recipes", Toast.LENGTH_SHORT).show();
                     // An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Intent myIntent = new Intent(getBaseContext(), veganMealTypeSelection.class);
                     // The intent is then activated by the startActivity Method and the recipe is diaplyed
                     startActivity(myIntent);
                 }
@@ -62,7 +62,7 @@ public class recipeTypeSection extends AppCompatActivity {
 
                 if (position ==  2) {
                     Toast.makeText(recipeTypeSection.this, "Accessing Standard Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), standardRecipes.class);
+                    Intent myIntent = new Intent(getBaseContext(), standardMealTypeSelection.class);
                     startActivity(myIntent);
                 }
 

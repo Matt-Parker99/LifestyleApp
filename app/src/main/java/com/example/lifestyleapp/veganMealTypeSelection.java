@@ -18,12 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.annotations.Nullable;
 
-public class vegetarianMealTypeSelection extends AppCompatActivity {
+public class veganMealTypeSelection extends AppCompatActivity {
 
 
     ListView listView;
     String mTitle[] = {"Breakfast","Smoothies","Lunch","Dinner","Dessert"};
-    String mDescription[] = {"Click here to access vegetarian breakfast recipes","Click here to access vegetarian smoothie recipes","Click here to access vegetarian Lunch recipes","Click here to access vegetarian Dinner recipes","Click here to access vegetarian Dessert recipes"};
+    String mDescription[] = {"Click here to access vegan breakfast recipes","Click here to access vegan smoothie recipes","Click here to access vegan Lunch recipes","Click here to access vegetarian vegan recipes","Click here to access vegan Dessert recipes"};
     int images[] = {R.drawable.breakfast,R.drawable.smoothie,R.drawable.lunch,R.drawable.dinner,R.drawable.dessert};
     // so our images and other things are set in array
 
@@ -32,7 +32,7 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegetarian_meal_type_selection);
+        setContentView(R.layout.activity_vegan_meal_type_selection);
 
         listView = findViewById(R.id.listView);
         // now create an adapter class
@@ -48,30 +48,30 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
                     // Once User Clicks the item they are displayed a recipe description prompt
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Breakfast Recipes", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(veganMealTypeSelection.this, "Accessing Breakfast Recipes", Toast.LENGTH_SHORT).show();
                     // An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
                     // The intent is then activated by the startActivity Method and the recipe is displayed
                     startActivity(myIntent);
                 }
                 if (position ==  1) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Smoothie Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Toast.makeText(veganMealTypeSelection.this, "Accessing Smoothie Recipes", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
                     startActivity(myIntent);
                 }
                 if (position ==  2) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Lunch Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Toast.makeText(veganMealTypeSelection.this, "Accessing Lunch Recipes", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
                     startActivity(myIntent);
                 }
                 if (position ==  3) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Dinner Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Toast.makeText(veganMealTypeSelection.this, "Accessing Dinner Recipes", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
                     startActivity(myIntent);
                 }
                 if (position ==  4) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Dessert Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Toast.makeText(veganMealTypeSelection.this, "Accessing Dessert Recipes", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
                     startActivity(myIntent);
                 }
 
@@ -121,5 +121,6 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
         }
     }
 }
+
 
 
