@@ -66,7 +66,7 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
                 }
                 if (position ==  3) {
                     Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Dinner Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
+                    Intent myIntent = new Intent(getBaseContext(), veganDinnerRecipes.class);
                     startActivity(myIntent);
                 }
                 if (position ==  4) {
