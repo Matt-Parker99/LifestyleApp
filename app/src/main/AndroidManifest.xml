@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".veganDinnerRecipes"></activity>
+        <activity android:name=".vegetarianDessertRecipes"></activity>
+        <activity android:name=".veganDessertRecipes" />
+        <activity android:name=".standardDessertRecipes" />
+        <activity android:name=".veganDinnerRecipes" />
         <activity android:name=".vegetarianDinnerRecipes" />
         <activity android:name=".standardDinnerRecipes" />
         <activity android:name=".vegetarianLunchRecipes" />
