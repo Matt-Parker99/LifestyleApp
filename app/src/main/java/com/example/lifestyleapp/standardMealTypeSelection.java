@@ -71,7 +71,7 @@ public class standardMealTypeSelection extends AppCompatActivity {
                 }
                 if (position ==  4) {
                     Toast.makeText(standardMealTypeSelection.this, "Accessing Dessert Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), standardRecipes.class);
+                    Intent myIntent = new Intent(getBaseContext(), standardDessertRecipes.class);
                     startActivity(myIntent);
                 }
 
