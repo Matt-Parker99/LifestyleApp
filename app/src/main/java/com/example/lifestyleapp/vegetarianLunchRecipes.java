@@ -18,13 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.annotations.Nullable;
 
-public class vegetarianMealTypeSelection extends AppCompatActivity {
+public class vegetarianLunchRecipes extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Breakfast","Smoothies","Lunch","Dinner","Dessert"};
-    String mDescription[] = {"Click here to access vegetarian breakfast recipes","Click here to access vegetarian smoothie recipes","Click here to access vegetarian Lunch recipes","Click here to access vegetarian Dinner recipes","Click here to access vegetarian Dessert recipes"};
-    int images[] = {R.drawable.breakfast,R.drawable.smoothie,R.drawable.lunch,R.drawable.dinner,R.drawable.dessert};
+    String mTitle[] = {"Lunch","Lunch","Lunch","Lunch","Lunch","Lunch"};
+    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!"};
+    int images[] = {R.drawable.lunch,R.drawable.lunch,R.drawable.lunch,R.drawable.lunch,R.drawable.lunch,R.drawable.lunch};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -32,7 +32,7 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegetarian_meal_type_selection);
+        setContentView(R.layout.activity_vegetarian_lunch_recipes);
 
         listView = findViewById(R.id.listView);
         // now create an adapter class
@@ -48,31 +48,36 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
                     // Once User Clicks the item they are displayed a recipe description prompt
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Breakfast Recipes", Toast.LENGTH_SHORT).show();
-                    // An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Toast.makeText(vegetarianLunchRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    /*// An Intent is created for the recipe class to be loaded
+                    Intent myIntent = new Intent(getBaseContext(), smoothie.class);
                     // The intent is then activated by the startActivity Method and the recipe is displayed
-                    startActivity(myIntent);
+                    startActivity(myIntent);*/
                 }
                 if (position ==  1) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Smoothie Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothies.class);
-                    startActivity(myIntent);
+                    Toast.makeText(vegetarianLunchRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    startActivity(myIntent);*/
                 }
                 if (position ==  2) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Lunch Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarianLunchRecipes.class);
-                    startActivity(myIntent);
+                    Toast.makeText(vegetarianLunchRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    startActivity(myIntent);*/
                 }
                 if (position ==  3) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Dinner Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
-                    startActivity(myIntent);
+                    Toast.makeText(vegetarianLunchRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    startActivity(myIntent);*/
                 }
                 if (position ==  4) {
-                    Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Dessert Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
-                    startActivity(myIntent);
+                    Toast.makeText(vegetarianLunchRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    startActivity(myIntent);*/
+                }
+                if (position ==  5) {
+                    Toast.makeText(vegetarianLunchRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    startActivity(myIntent);*/
                 }
 
 
@@ -121,5 +126,6 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
         }
     }
 }
+
 
 

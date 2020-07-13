@@ -50,28 +50,28 @@ public class veganMealTypeSelection extends AppCompatActivity {
                     // Once User Clicks the item they are displayed a recipe description prompt
                     Toast.makeText(veganMealTypeSelection.this, "Accessing Breakfast Recipes", Toast.LENGTH_SHORT).show();
                     // An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
                     // The intent is then activated by the startActivity Method and the recipe is displayed
                     startActivity(myIntent);
                 }
                 if (position ==  1) {
                     Toast.makeText(veganMealTypeSelection.this, "Accessing Smoothie Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothies.class);
+                    Intent myIntent = new Intent(getBaseContext(), veganSmoothies.class);
                     startActivity(myIntent);
                 }
                 if (position ==  2) {
                     Toast.makeText(veganMealTypeSelection.this, "Accessing Lunch Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Intent myIntent = new Intent(getBaseContext(), veganLunchRecipes.class);
                     startActivity(myIntent);
                 }
                 if (position ==  3) {
                     Toast.makeText(veganMealTypeSelection.this, "Accessing Dinner Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
                     startActivity(myIntent);
                 }
                 if (position ==  4) {
                     Toast.makeText(veganMealTypeSelection.this, "Accessing Dessert Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Intent myIntent = new Intent(getBaseContext(), vegan.class);
                     startActivity(myIntent);
                 }
 
