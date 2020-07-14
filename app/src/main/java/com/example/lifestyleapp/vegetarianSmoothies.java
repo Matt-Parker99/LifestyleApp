@@ -22,9 +22,10 @@ public class vegetarianSmoothies extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Smoothie 1","Smoothie 2","Smoothie 3","Smoothie 4","Smoothie 5","Smoothie 6",};
-    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!"};
-    int images[] = {R.drawable.smoothie, R.drawable.smoothie, R.drawable.smoothie,R.drawable.smoothie,R.drawable.smoothie,R.drawable.smoothie};
+    String mTitle[] = {"breakfast-super-shake","two-minute-breakfast-smoothie","strawberry-green-goddess-smoothie","strawberry-smoothie","raspberry-and-apple-smoothie","sunshine-smoothie","kale-smoothie"
+};
+    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click Here!"};
+    int images[] = {R.drawable.breakfastsmoothies, R.drawable.breakfastsmoothies, R.drawable.strawberrysmoothie,R.drawable.strawberrysmoothiered,R.drawable.raspberryandapplesmoothie,R.drawable.sunshinesmoothie,R.drawable.kalesmoothie};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -79,7 +80,11 @@ public class vegetarianSmoothies extends AppCompatActivity {
                     /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
                     startActivity(myIntent);*/
                 }
-
+                if (position == 5){
+                    Toast.makeText(vegetarianSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    //Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    //startActivity(myIntent)
+                }
 
 
 

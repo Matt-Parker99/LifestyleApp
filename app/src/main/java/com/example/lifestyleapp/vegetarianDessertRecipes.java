@@ -22,9 +22,9 @@ public class vegetarianDessertRecipes extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Dessert","Dessert","Dessert","Dessert","Dessert","Dessert",};
+    String mTitle[] = {"chocolate-peanut-butter-avocado-pudding","vegan-chocolate-banana-ice-cream","orange-rhubarb-amaretti-pots","rosewater-raspberry-sponge-cake ","quick-easy-tiramisu"};
     String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!"};
-    int images[] = {R.drawable.dessert,R.drawable.dessert,R.drawable.dessert,R.drawable.dessert,R.drawable.dessert,R.drawable.dessert,};
+    int images[] = {R.drawable.chocavocadopudding,R.drawable.chocolatebananaicecream,R.drawable.orangerhubarbamarettipots,R.drawable.rosewaterraspberryspongecake,R.drawable.quickandeasytiramisu};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -74,11 +74,7 @@ public class vegetarianDessertRecipes extends AppCompatActivity {
                     /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
                     startActivity(myIntent);*/
                 }
-                if (position ==  5) {
-                    Toast.makeText(vegetarianDessertRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
-                }
+
 
 
 
