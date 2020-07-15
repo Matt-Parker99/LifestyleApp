@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".vegLunch6"></activity>
+        <activity android:name=".vegDinner6"></activity>
+        <activity android:name=".vegDinner5" />
+        <activity android:name=".vegDinner4" />
+        <activity android:name=".vegDinner3" />
+        <activity android:name=".vegDinner2" />
+        <activity android:name=".vegDinner1" />
+        <activity android:name=".vegLunch6" />
         <activity android:name=".vegLunch5" />
         <activity android:name=".vegLunch4" />
         <activity android:name=".vegLunch3" />

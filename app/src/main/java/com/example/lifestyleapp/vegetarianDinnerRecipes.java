@@ -49,35 +49,35 @@ public class vegetarianDinnerRecipes extends AppCompatActivity {
                 if (position ==  0) {
                     // Once User Clicks the item they are displayed a recipe description prompt
                     Toast.makeText(vegetarianDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*// An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    // An Intent is created for the recipe class to be loaded
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner1.class);
                     // The intent is then activated by the startActivity Method and the recipe is displayed
-                    startActivity(myIntent);*/
+                    startActivity(myIntent);
                 }
                 if (position ==  1) {
                     Toast.makeText(vegetarianDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner2.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  2) {
                     Toast.makeText(vegetarianDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner3.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  3) {
                     Toast.makeText(vegetarianDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner4.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  4) {
                     Toast.makeText(vegetarianDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner5.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  5) {
                     Toast.makeText(vegetarianDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner6.class);
+                    startActivity(myIntent);
                 }
 
 
