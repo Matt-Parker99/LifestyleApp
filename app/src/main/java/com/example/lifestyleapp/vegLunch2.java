@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.StorageReference;
 
-public class vegetarianSmoothie1 extends AppCompatActivity {
+public class vegLunch2 extends AppCompatActivity {
 
     private String userID;
     private FirebaseUser user;
@@ -22,13 +22,28 @@ public class vegetarianSmoothie1 extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String ingredients[] = {"100ml full-fat milk ","2 tbsp natural yogurt","1 banana","150g frozen fruits of the forest","50g blueberries","1 tbsp chia seeds","½ tsp cinnamon","1 tbsp goji berries","1 tsp mixed seeds","1 tsp honey"};
+    String ingredients[] = {"black beans"
+            ,"coriander"
+            ," tortillas"
+            ," avocado"
+            ," guacamole"
+            ,"soured cream"
+            ,"red pepper "
+            ,"yellow pepper"
+            ," tbsp oil"
+            ," red onion, cut into thin wedges"
+            ," garlic clove, crushed"
+            ," tsp chilli powder"
+            ," tsp smoked paprika"
+            ," tsp ground cumin"
+            ," lime"
+            };
     // quantity units to bo added in the ingredient object file on DB
-    Double quantaties[] = {100.0, 2.0 , 1.0, .150, 0.50, 1.0, 0.50,1.0,1.0,1.0};
+    Double quantaties[] = {0.400,1.0,4.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,0.5,0.5,0.5,1.0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegetarian_smoothie1);
+        setContentView(R.layout.activity_veg_lunch2);
 
     }
 
@@ -38,8 +53,8 @@ public class vegetarianSmoothie1 extends AppCompatActivity {
 //    };
 
     public void viewRecipeOnline(android.view.View view){
-        Toast.makeText(vegetarianSmoothie1.this, "Accessing Recipe Website", Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/breakfast-super-shake"));
+        Toast.makeText(vegLunch2.this, "Accessing Website Of Recipe", Toast.LENGTH_SHORT).show();
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/veggie-fajitas"));
         startActivity(myIntent);
     }
 

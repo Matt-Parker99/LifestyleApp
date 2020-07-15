@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.StorageReference;
 
-public class vegetarianSmoothie1 extends AppCompatActivity {
+public class vegLunch6 extends AppCompatActivity {
 
     private String userID;
     private FirebaseUser user;
@@ -22,13 +22,21 @@ public class vegetarianSmoothie1 extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String ingredients[] = {"100ml full-fat milk ","2 tbsp natural yogurt","1 banana","150g frozen fruits of the forest","50g blueberries","1 tbsp chia seeds","½ tsp cinnamon","1 tbsp goji berries","1 tsp mixed seeds","1 tsp honey"};
+    String ingredients[] = {"seeded wholemeal soda bread"
+            ,"chickpeas"
+            ,"beetroot"
+            ,"lemon juice"
+            ,"garlic clove"
+            ,"rapeseed oil"
+            ,"feta"
+            ,"Kalamata olives"
+            ,"mint "};
     // quantity units to bo added in the ingredient object file on DB
-    Double quantaties[] = {100.0, 2.0 , 1.0, .150, 0.50, 1.0, 0.50,1.0,1.0,1.0};
+    Double quantaties[] = {2.0,0.210,0.200,1.0,1.0,1.0,0.030,6.0,1.0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegetarian_smoothie1);
+        setContentView(R.layout.activity_veg_lunch6);
 
     }
 
@@ -38,8 +46,8 @@ public class vegetarianSmoothie1 extends AppCompatActivity {
 //    };
 
     public void viewRecipeOnline(android.view.View view){
-        Toast.makeText(vegetarianSmoothie1.this, "Accessing Recipe Website", Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/breakfast-super-shake"));
+        Toast.makeText(vegLunch6.this, "Accessing Website Of Recipe", Toast.LENGTH_SHORT).show();
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/beetroot-humous-toasts-olives-mint"));
         startActivity(myIntent);
     }
 
