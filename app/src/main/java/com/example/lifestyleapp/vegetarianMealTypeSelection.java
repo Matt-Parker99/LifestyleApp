@@ -50,7 +50,7 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
                     // Once User Clicks the item they are displayed a recipe description prompt
                     Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Breakfast Recipes", Toast.LENGTH_SHORT).show();
                     // An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), vegetarian.class);
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianBreakfastRecipes.class);
                     // The intent is then activated by the startActivity Method and the recipe is displayed
                     startActivity(myIntent);
                 }
@@ -66,7 +66,7 @@ public class vegetarianMealTypeSelection extends AppCompatActivity {
                 }
                 if (position ==  3) {
                     Toast.makeText(vegetarianMealTypeSelection.this, "Accessing Dinner Recipes", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(getBaseContext(), veganDinnerRecipes.class);
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianDinnerRecipes.class);
                     startActivity(myIntent);
                 }
                 if (position ==  4) {
