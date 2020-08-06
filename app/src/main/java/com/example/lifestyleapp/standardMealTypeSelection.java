@@ -23,7 +23,7 @@ public class standardMealTypeSelection extends AppCompatActivity {
 
     ListView listView;
     String mTitle[] = {"Breakfast","Smoothies","Lunch","Dinner","Dessert"};
-    String mDescription[] = {"Click here to access vegetarian breakfast recipes","Click here to access vegetarian smoothie recipes","Click here to access vegetarian Lunch recipes","Click here to access vegetarian Dinner recipes","Click here to access vegetarian Dessert recipes"};
+    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!"};
     int images[] = {R.drawable.breakfast,R.drawable.smoothie,R.drawable.lunch,R.drawable.dinner,R.drawable.dessert};
     // so our images and other things are set in array
 
