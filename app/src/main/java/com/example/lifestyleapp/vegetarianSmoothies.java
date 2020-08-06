@@ -80,7 +80,7 @@ public class vegetarianSmoothies extends AppCompatActivity {
                     Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie6.class);
                     startActivity(myIntent);
                 }
-                if (position == 5){
+                if (position == 6){
                     Toast.makeText(vegetarianSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie7.class);
                     startActivity(myIntent);

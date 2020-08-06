@@ -22,9 +22,9 @@ public class veganDinnerRecipes extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Dinner","Dinner","Dinner","Dinner","Dinner"};
+    String mTitle[] = {"singapore-noodles"," salt-pepper-tofu","italian-style-roast-cabbage-wedges-tomato-lentils ","vegan-meatballs"," vegan-katsu-curry",};
     String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!"};
-    int images[] = {R.drawable.dinner,R.drawable.dinner,R.drawable.dinner,R.drawable.dinner,R.drawable.dinner};
+    int images[] = {R.drawable.vegandinner1,R.drawable.vegandinner2,R.drawable.vegandinner3,R.drawable.vegandinner4,R.drawable.vegandinner5};
     // so our images and other things are set in array
 
     // now paste some images in drawable

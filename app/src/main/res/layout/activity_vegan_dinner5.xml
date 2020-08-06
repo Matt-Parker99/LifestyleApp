@@ -10,7 +10,7 @@
         android:id="@+id/imageView3"
         android:layout_width="320dp"
         android:layout_height="406dp"
-        android:src="@drawable/rancheros"
+        android:src="@drawable/vegandinner5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"

@@ -22,9 +22,9 @@ public class standardSmoothies extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Smoothie 1","Smoothie 2","Smoothie 3","Smoothie 4","Smoothie 5","Smoothie 6",};
-    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!"};
-    int images[] = {R.drawable.smoothie, R.drawable.smoothie, R.drawable.smoothie,R.drawable.smoothie,R.drawable.smoothie,R.drawable.smoothie};
+    String mTitle[] = {"vegan-smoothie","kiwi-fruit-smoothie","bone-builder-smoothie","green-breakfast-smoothie","tropical-breakfast-smoothie", "breakfast-super-shake","two-minute-breakfast-smoothie","strawberry-green-goddess-smoothie","strawberry-smoothie","raspberry-and-apple-smoothie","sunshine-smoothie","kale-smoothie"};
+    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click here!","Click here!",};
+    int images[] = {R.drawable.vegansmoothie1, R.drawable.kiwismoothie, R.drawable.vegansmoothie3,R.drawable.vegansmoothie4,R.drawable.vegansmoothie5,R.drawable.breakfastsmoothies, R.drawable.breakfastsmoothies, R.drawable.strawberrysmoothie,R.drawable.strawberrysmoothiered,R.drawable.raspberryandapplesmoothie,R.drawable.sunshinesmoothie,R.drawable.kalesmoothie};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -48,39 +48,74 @@ public class standardSmoothies extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
                     // Once User Clicks the item they are displayed a recipe description prompt
-                    Toast.makeText(standardSmoothies.this, "Accessing Shopping List Creator", Toast.LENGTH_SHORT).show();
-                    /*// An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), ShoppingLists.class);
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    // An Intent is created for the recipe class to be loaded
+                    Intent myIntent = new Intent(getBaseContext(), veganSmoothie1.class);
                     // The intent is then activated by the startActivity Method and the recipe is diaplyed
-                    startActivity(myIntent);*/
+                    startActivity(myIntent);
                 }
                 if (position ==  1) {
-                    Toast.makeText(standardSmoothies.this, "Accessing Store Websites", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), storeWebsites.class);
-                    startActivity(myIntent);*/
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), veganSmoothie2.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  2) {
-                    Toast.makeText(standardSmoothies.this, "Accessing Discount Websites", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), discountWebsites.class);
-                    startActivity(myIntent);*/
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), veganSmoothie3.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  3) {
-                    Toast.makeText(standardSmoothies.this, "Accessing Discount Websites", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), discountWebsites.class);
-                    startActivity(myIntent);*/
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), veganSmoothie4.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  4) {
-                    Toast.makeText(standardSmoothies.this, "Accessing Discount Websites", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), discountWebsites.class);
-                    startActivity(myIntent);*/
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), veganSmoothie5.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  5) {
-                    Toast.makeText(standardSmoothies.this, "Accessing Discount Websites", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), discountWebsites.class);
-                    startActivity(myIntent);*/
+                    // Once User Clicks the item they are displayed a recipe description prompt
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    // An Intent is created for the recipe class to be loaded
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie1.class);
+                    // The intent is then activated by the startActivity Method and the recipe is displayed
+                    startActivity(myIntent);
                 }
+                if (position ==  6) {
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie2.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  7) {
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie3.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  8) {
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie4.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  9) {
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie5.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  10) {
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie6.class);
+                    startActivity(myIntent);
+                }
+                if (position == 11){
+                    Toast.makeText(standardSmoothies.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegetarianSmoothie7.class);
+                    startActivity(myIntent);
+                }
+
             }
         });
+        // so item click is done now check list view
         // so item click is done now check list view
     }
 

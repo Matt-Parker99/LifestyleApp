@@ -22,9 +22,18 @@ public class veganDinner2 extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String ingredients[] = {"vegetable oil","tortilla wrap","egg","can black beans, drained","lime juice","ripe avocado","feta","hot chilli sauce"};
+    String ingredients[] = {"firm tofu"
+            ,"cornflour"
+            ,"black peppercorns"
+            ,"sunflower oil"
+            ,"red peppers"
+            ,"broccoli"
+            ,"beansprouts"
+            ,"low-salt soy sauce"
+            ,"sesame oil"
+            ,"coriander"};
     // quantity units to bo added in the ingredient object file on DB
-    Double quantaties[] = {1.0,1.0,1.0,0.200,0.5,0.5,0.05,1.0};
+    Double quantaties[] = {0.396,2.0,1.0,2.0,2.0,0.250,0.100,2.0,1.0,1.0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +48,7 @@ public class veganDinner2 extends AppCompatActivity {
 
     public void viewRecipeOnline(android.view.View view){
         Toast.makeText(veganDinner2.this, "Accessing Recipe Website", Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/easy-huevos-rancheros"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/salt-pepper-tofu"));
         startActivity(myIntent);
     }
 

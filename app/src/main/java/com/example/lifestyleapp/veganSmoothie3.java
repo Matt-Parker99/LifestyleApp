@@ -22,7 +22,21 @@ public class veganSmoothie3 extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String ingredients[] = {"vegetable oil","tortilla wrap","egg","can black beans, drained","lime juice","ripe avocado","feta","hot chilli sauce"};
+    String ingredients[] = {"½ avocado\n" +
+            "\n" +
+            ", peeled, stoned and roughly chopped\n" +
+            "generous handful spinach\n" +
+            "\n" +
+            "generous handful kale\n" +
+            "\n" +
+            ", washed well\n" +
+            "50g pineapple\n" +
+            "\n" +
+            " chunks\n" +
+            "10cm piece cucumber, roughly chopped\n" +
+            "300ml coconut\n" +
+            "\n" +
+            " water"};
     // quantity units to bo added in the ingredient object file on DB
     Double quantaties[] = {1.0,1.0,1.0,0.200,0.5,0.5,0.05,1.0};
     @Override
@@ -39,7 +53,7 @@ public class veganSmoothie3 extends AppCompatActivity {
 
     public void viewRecipeOnline(android.view.View view){
         Toast.makeText(veganSmoothie3.this, "Accessing Recipe Website", Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/easy-huevos-rancheros"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/bone-builder-smoothie"));
         startActivity(myIntent);
     }
 

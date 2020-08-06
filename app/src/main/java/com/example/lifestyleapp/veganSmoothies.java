@@ -22,9 +22,9 @@ public class veganSmoothies extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Smoothie 1","Smoothie 2","Smoothie 3","Smoothie 4","Smoothie 5",};
+    String mTitle[] = {"vegan-smoothie","kiwi-fruit-smoothie","bone-builder-smoothie","green-breakfast-smoothie","tropical-breakfast-smoothie",};
     String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!",};
-    int images[] = {R.drawable.smoothie, R.drawable.smoothie, R.drawable.smoothie,R.drawable.smoothie,R.drawable.smoothie};
+    int images[] = {R.drawable.vegansmoothie1, R.drawable.kiwismoothie, R.drawable.vegansmoothie3,R.drawable.vegansmoothie4,R.drawable.vegansmoothie5};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -74,13 +74,6 @@ public class veganSmoothies extends AppCompatActivity {
                     Intent myIntent = new Intent(getBaseContext(), veganSmoothie5.class);
                     startActivity(myIntent);
                 }
-
-
-
-
-
-
-
 
             }
         });

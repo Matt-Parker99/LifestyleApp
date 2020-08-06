@@ -22,9 +22,9 @@ public class standardDinnerRecipes extends AppCompatActivity {
 
 
     ListView listView;
-    String mTitle[] = {"Dinner","Dinner","Dinner","Dinner","Dinner","Dinner",};
-    String mDescription[] = {"Click here!","Click here!","Click here!","Click here!","Click here!","Click here!"};
-    int images[] = {R.drawable.dinner,R.drawable.dinner,R.drawable.dinner,R.drawable.dinner,R.drawable.dinner,R.drawable.dinner};
+    String mTitle[] = {"singapore-noodles"," salt-pepper-tofu","italian-style-roast-cabbage-wedges-tomato-lentils ","vegan-meatballs"," vegan-katsu-curry", "sweet-potato-harissa-cakes-poached-eggs","charred-spring-onions-teriyaki-tofu", "vegetarian-wellington", "slow-cooker-vegetable-lasagne", "double-cheese-spring-vegetable-tart", "bean-halloumi-stew"};
+    String mDescription[] = {"Click Here!","Click Here!","Click Here!","Click Here!","Click Here!","Click Here!","Click Here!","Click Here!","Click Here!","Click Here!","Click Here!",};
+    int images[] = {R.drawable.vegandinner1,R.drawable.vegandinner2,R.drawable.vegandinner3,R.drawable.vegandinner4,R.drawable.vegandinner5,R.drawable.sweetpotatoharissacakeswithpoachedeggs,R.drawable.charredspringonionsteriyakitofu,R.drawable.vegetarianwellington,R.drawable.vegelasagne,R.drawable.doublecheesespringvegetabletart,R.drawable.beanhalloumistew};
     // so our images and other things are set in array
 
     // now paste some images in drawable
@@ -49,35 +49,63 @@ public class standardDinnerRecipes extends AppCompatActivity {
                 if (position ==  0) {
                     // Once User Clicks the item they are displayed a recipe description prompt
                     Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*// An Intent is created for the recipe class to be loaded
-                    Intent myIntent = new Intent(getBaseContext(), smoothie.class);
+                    // An Intent is created for the recipe class to be loaded
+                    Intent myIntent = new Intent(getBaseContext(), veganDinner1.class);
                     // The intent is then activated by the startActivity Method and the recipe is displayed
-                    startActivity(myIntent);*/
+                    startActivity(myIntent);
                 }
                 if (position ==  1) {
                     Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), veganDinner2.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  2) {
                     Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), veganDinner3.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  3) {
                     Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), veganDinner4.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  4) {
                     Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    Intent myIntent = new Intent(getBaseContext(), veganDinner5.class);
+                    startActivity(myIntent);
                 }
                 if (position ==  5) {
+                    // Once User Clicks the item they are displayed a recipe description prompt
                     Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
-                    /*Intent myIntent = new Intent(getBaseContext(), smoothie.class);
-                    startActivity(myIntent);*/
+                    // An Intent is created for the recipe class to be loaded
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner1.class);
+                    // The intent is then activated by the startActivity Method and the recipe is displayed
+                    startActivity(myIntent);
+                }
+                if (position ==  6) {
+                    Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner2.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  7) {
+                    Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner3.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  8) {
+                    Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner4.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  9) {
+                    Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner5.class);
+                    startActivity(myIntent);
+                }
+                if (position ==  10) {
+                    Toast.makeText(standardDinnerRecipes.this, "Accessing Recipe", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(getBaseContext(), vegDinner6.class);
+                    startActivity(myIntent);
                 }
 
 

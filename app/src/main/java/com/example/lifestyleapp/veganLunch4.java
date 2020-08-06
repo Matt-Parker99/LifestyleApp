@@ -22,9 +22,21 @@ public class veganLunch4 extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String ingredients[] = {"vegetable oil","tortilla wrap","egg","can black beans, drained","lime juice","ripe avocado","feta","hot chilli sauce"};
+    String ingredients[] = {"flat-leaf parsley"
+            ,"mint"
+            ,"chives"
+            ,"radishes"
+            ,"beetroot"
+            ,"red apple"
+            ,"ground cumin"
+            ,"olive oil"
+            ,"cooked quinoa"
+            ,"chickpeas"
+            ,"green lentils"
+            ,"lemons"
+            };
     // quantity units to bo added in the ingredient object file on DB
-    Double quantaties[] = {1.0,1.0,1.0,0.200,0.5,0.5,0.05,1.0};
+    Double quantaties[] = {1.0,1.0,1.0,0.200,2.0,1.0,1.0,4.0,0.250,0.400,0.400,2.0};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +51,7 @@ public class veganLunch4 extends AppCompatActivity {
 
     public void viewRecipeOnline(android.view.View view){
         Toast.makeText(veganLunch4.this, "Accessing Recipe Website", Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/easy-huevos-rancheros"));
+        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbcgoodfood.com/recipes/beetroot-lentil-tabbouleh"));
         startActivity(myIntent);
     }
 
