@@ -40,4 +40,8 @@ public class DatabaseCustomFunctions {
             e.printStackTrace();
         }
     }
+
+    public String getRecipeDescription(String recipeName) {
+        return "gotRecipeDescription";
+    }
 }
