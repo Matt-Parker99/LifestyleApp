@@ -24,7 +24,7 @@ public class shoppingSelectFeature extends AppCompatActivity {
     ListView listView;
     String mTitle[] = {"Shopping List Creator","Visit Online Websites Of Stores","Visit A Selection Of Discount/Promotion Code Websites"};
     String mDescription[] = {"Click here to create your own shopping List","Click here to access online stores","Click here to access online discount/promotion websites"};
-    int images[] = {R.drawable.shoppinglist, R.drawable.onlineshopping, R.drawable.discountlogo};
+    int images[] = {R.drawable.shopping_list, R.drawable.onlineshopping, R.drawable.discountlogo};
     // so our images and other things are set in array
 
     // now paste some images in drawable
