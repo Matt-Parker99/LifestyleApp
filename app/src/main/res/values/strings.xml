@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">LifestyleApp</string>
     <string name="welcome">Welcome</string>
+    <string name="tab_text_1">Description</string>
+    <string name="tab_text_2">Recipe</string>
 </resources>
