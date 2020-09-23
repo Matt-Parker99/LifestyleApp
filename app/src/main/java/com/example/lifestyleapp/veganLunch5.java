@@ -38,7 +38,7 @@ public class veganLunch5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vegan_lunch5);
+//        setContentView(R.layout.activity_vegan_lunch5);
 
     }
 
