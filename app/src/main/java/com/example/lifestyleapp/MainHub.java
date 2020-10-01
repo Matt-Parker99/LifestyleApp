@@ -72,7 +72,7 @@ public class MainHub extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), shoppingSelectFeature.class);
         startActivity(myIntent);
     }
-    // message button, starts to message activity
+
     public void blogs(android.view.View view){
         Intent myIntent = new Intent(getBaseContext(),selectBlogType.class);
         startActivity(myIntent);
@@ -96,11 +96,13 @@ public class MainHub extends AppCompatActivity {
         Intent myIntent = new Intent(getBaseContext(), recipeTypeSection.class);
         startActivity(myIntent);
     }
-    // statistics button, starts statistics activity
-    public void statistics(android.view.View view){
-        Intent myIntent = new Intent(getBaseContext(),Statistics.class);
+
+    public void customRecipe(android.view.View view){
+        Intent myIntent = new Intent(getBaseContext(), GenericRecipe.class);
         startActivity(myIntent);
     }
+
+
     // (Bottom row - back arrow) logout button, signs out from firebase instance and returns to MainActivity
     public void logout(android.view.View view){
         FirebaseAuth.getInstance().signOut();

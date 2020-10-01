@@ -5,9 +5,14 @@ import android.util.Log;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +47,45 @@ public class DatabaseCustomFunctions {
     }
 
     public String getRecipeDescription(String recipeName) {
-        return "gotRecipeDescription";
+        String result = "Error on reading "+recipeName+" !";
+
+        StorageReference recipeRef = mStorageRef.child("recipeDescriptions/"+recipeName);
+
+        File localFile = null;
+        try {
+            localFile = File.createTempFile(recipeName, "txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileDownloadTask download = recipeRef.getFile(localFile);
+            while (download.isInProgress()) {
+
+            }
+
+            if (download.isSuccessful()){
+                StringBuilder text = new StringBuilder();
+
+                try {
+                    BufferedReader br = new BufferedReader(new FileReader(localFile));
+                    String line;
+
+                    while ((line = br.readLine()) != null) {
+                        text.append(line);
+                        text.append('\n');
+                    }
+                    br.close();
+                    result = text.toString();
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

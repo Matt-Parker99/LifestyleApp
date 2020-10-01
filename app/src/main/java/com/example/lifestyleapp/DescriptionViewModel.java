@@ -18,7 +18,7 @@ public class DescriptionViewModel extends ViewModel {
     public LiveData<String> getText() {
         if (mText == null) {
             mText = new MutableLiveData<>();
-            mText.setValue(db.getRecipeDescription(file.toString()));
+            mText.setValue(db.getRecipeDescription(file.getValue()));
             return mText;
         } else {
             return mText;

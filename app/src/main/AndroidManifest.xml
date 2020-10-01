@@ -113,6 +113,7 @@
         <activity android:name=".MainHub" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
+        <activity android:name=".GenericRecipe"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
